@@ -20,7 +20,7 @@
   body {
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     background:linear-gradient(160deg,var(--bg1),var(--bg2));
-    color:var(--txt); min-height:100vh; padding:32px 16px 60px;
+    color:var(--txt); min-height:100vh; padding:32px 16px 88px;
   }
   .wrap { max-width:620px; margin:0 auto; }
   header { text-align:center; margin-bottom:28px; }
@@ -66,6 +66,26 @@
   .ofertas { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   @media (max-width:480px) { .ofertas { grid-template-columns:1fr; } }
   .card[hidden] { display:none; }
+  .views { font-size:.72rem; color:var(--muted); margin-top:2px; }
+  .views[hidden] { display:none; }
+  .online-badge {
+    position:fixed; right:14px; bottom:14px; z-index:50;
+    display:flex; align-items:center; gap:8px;
+    background:var(--card); color:var(--txt); border:1px solid var(--card2);
+    border-radius:22px; padding:9px 15px; font-size:.82rem; font-weight:600;
+    box-shadow:0 6px 20px rgba(0,0,0,.28);
+  }
+  .online-badge[hidden] { display:none; }
+  .online-badge b { color:var(--ok); }
+  .online-badge .dot {
+    width:9px; height:9px; border-radius:50%; background:var(--ok); flex:none;
+    box-shadow:0 0 0 0 rgba(34,197,94,.7); animation:pulso 1.8s infinite;
+  }
+  @keyframes pulso {
+    0% { box-shadow:0 0 0 0 rgba(34,197,94,.6); }
+    70% { box-shadow:0 0 0 8px rgba(34,197,94,0); }
+    100% { box-shadow:0 0 0 0 rgba(34,197,94,0); }
+  }
   .card {
     position:relative; display:flex; flex-direction:column; gap:8px;
     background:var(--card); border:1px solid var(--card2);
@@ -118,733 +138,856 @@
       <div id="contador" class="contador"></div>
     </div>
     <div class="ofertas" id="ofertas">
-      <a class="card" href="https://www.mercadolivre.com.br/2k-waterproof-motorcycle-dvr-dual-dash-camera/p/MLB2090528867?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="2k waterproof motorcycle dvr dual dash camera">
+      <a class="card" href="https://www.mercadolivre.com.br/2k-waterproof-motorcycle-dvr-dual-dash-camera/p/MLB2090528867?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="2k waterproof motorcycle dvr dual dash camera" data-vk="c50765d46b7ae373">
         <span class="badge">-84%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">2k Waterproof Motorcycle Dvr Dual Dash Camera</span>
         <span class="precos"><span class="preco">R$ 126,00</span><span class="antigo">R$ 799,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/aparelho-monitor-presso-arterial-braco-omron-progress-hem-7156t-medidor-digital-aferidor-com-bracadeira-grande-obeso-portatil-automatico-profissional-anvisa-inmetro/p/MLB23530772?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="aparelho monitor pressão arterial braço omron progress hem-7156t medidor digital aferidor com braçadeira grande obeso portátil automático profissional anvisa inmetro">
+      <a class="card" href="https://www.mercadolivre.com.br/aparelho-monitor-presso-arterial-braco-omron-progress-hem-7156t-medidor-digital-aferidor-com-bracadeira-grande-obeso-portatil-automatico-profissional-anvisa-inmetro/p/MLB23530772?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="aparelho monitor pressão arterial braço omron progress hem-7156t medidor digital aferidor com braçadeira grande obeso portátil automático profissional anvisa inmetro" data-vk="7c20ce1272c4d1bd">
         <span class="badge">-81%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Aparelho Monitor Pressão Arterial Braço Omron Progress HEM-7156T Medidor Digital Aferidor com Braçadeira Grande Obeso Portátil Automático Profissional Anvisa Inmetro</span>
         <span class="precos"><span class="preco">R$ 169,00</span><span class="antigo">R$ 899,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/meu-primeiro-tablet-pimpi-branco/p/MLB62370136?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="meu primeiro tablet pimpi branco">
+      <a class="card" href="https://www.mercadolivre.com.br/meu-primeiro-tablet-pimpi-branco/p/MLB62370136?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="meu primeiro tablet pimpi branco" data-vk="73f90c94aad851bb">
         <span class="badge">-81%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Meu Primeiro Tablet Pimpi Branco</span>
         <span class="precos"><span class="preco">R$ 114,00</span><span class="antigo">R$ 599,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/jogo-de-espatulas-nylon-amarelo-5-pecas-para-desmontar-painel-carro/p/MLB43427720?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="jogo de espátulas nylon amarelo 5 peças para desmontar painel carro">
+      <a class="card" href="https://www.mercadolivre.com.br/jogo-de-espatulas-nylon-amarelo-5-pecas-para-desmontar-painel-carro/p/MLB43427720?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="jogo de espátulas nylon amarelo 5 peças para desmontar painel carro" data-vk="f5147cdd59c6eb84">
         <span class="badge">-80%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Jogo De Espátulas Nylon Amarelo 5 Peças Para Desmontar Painel Carro</span>
         <span class="precos"><span class="preco">R$ 19,00</span><span class="antigo">R$ 94,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mouse-gamer-hyperx-pulsefire-haste-2-design-super-leve-de-53g-sensor-de-preciso-hyperx-26k-ate-26000-dpi-8000hz-cabo-ultraflexivel-preto-6n0a7aa/p/MLB28438096?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse gamer hyperx pulsefire haste 2 - design super leve de 53g, sensor de precisão hyperx 26k, até 26000 dpi, 8000hz, cabo ultraflexível, preto (6n0a7aa)">
+      <a class="card" href="https://www.mercadolivre.com.br/mouse-gamer-hyperx-pulsefire-haste-2-design-super-leve-de-53g-sensor-de-preciso-hyperx-26k-ate-26000-dpi-8000hz-cabo-ultraflexivel-preto-6n0a7aa/p/MLB28438096?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse gamer hyperx pulsefire haste 2 - design super leve de 53g, sensor de precisão hyperx 26k, até 26000 dpi, 8000hz, cabo ultraflexível, preto (6n0a7aa)" data-vk="7a12d52bf12176f2">
         <span class="badge">-79%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mouse Gamer HyperX Pulsefire Haste 2 - Design Super Leve de 53g, Sensor de precisão HyperX 26K, Até 26000 DPI, 8000HZ, Cabo Ultraflexível, Preto (6N0A7AA)</span>
         <span class="precos"><span class="preco">R$ 148,00</span><span class="antigo">R$ 699,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mouse-gamer-hyperx-pulsefire-haste-2-core-sem-fio-optico-leve-e-com-bateria-de-longa-duraco/p/MLB47156434?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse gamer hyperx pulsefire haste 2 core sem fio, óptico, leve e com bateria de longa duração">
+      <a class="card" href="https://www.mercadolivre.com.br/mouse-gamer-hyperx-pulsefire-haste-2-core-sem-fio-optico-leve-e-com-bateria-de-longa-duraco/p/MLB47156434?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse gamer hyperx pulsefire haste 2 core sem fio, óptico, leve e com bateria de longa duração" data-vk="f1b8ba4704bf758b">
         <span class="badge">-79%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mouse Gamer HyperX Pulsefire Haste 2 Core Sem Fio, Óptico, Leve e com Bateria de Longa Duração</span>
         <span class="precos"><span class="preco">R$ 149,00</span><span class="antigo">R$ 699,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-4717837583-leggings-esportivas-femininas-largas-com-bolsa-de-carga-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="leggings esportivas femininas largas com bolsa de carga">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-4717837583-leggings-esportivas-femininas-largas-com-bolsa-de-carga-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="leggings esportivas femininas largas com bolsa de carga" data-vk="066609e75f1dc916">
         <span class="badge">-78%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Leggings Esportivas Femininas Largas Com Bolsa De Carga</span>
         <span class="precos"><span class="preco">R$ 37,00</span><span class="antigo">R$ 170,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/cmera-de-seguranca-ip-smart-externa-wifi-hd-yoosee-com-viso-noturna-e-audio-bidirecional/p/MLB25474122?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="câmera de segurança ip smart externa wifi hd yoosee com visão noturna e áudio bidirecional">
+      <a class="card" href="https://www.mercadolivre.com.br/cmera-de-seguranca-ip-smart-externa-wifi-hd-yoosee-com-viso-noturna-e-audio-bidirecional/p/MLB25474122?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="câmera de segurança ip smart externa wifi hd yoosee com visão noturna e áudio bidirecional" data-vk="5fa6ebb049d55a10">
         <span class="badge">-78%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Câmera de Segurança IP Smart Externa Wifi HD Yoosee com Visão Noturna e Áudio Bidirecional</span>
         <span class="precos"><span class="preco">R$ 79,00</span><span class="antigo">R$ 359,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mouse-gamer-sem-fio-hyperx-haste-8r2e6aa-preto/p/MLB46032147?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse gamer sem fio hyperx haste 8r2e6aa preto">
+      <a class="card" href="https://www.mercadolivre.com.br/mouse-gamer-sem-fio-hyperx-haste-8r2e6aa-preto/p/MLB46032147?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse gamer sem fio hyperx haste 8r2e6aa preto" data-vk="6b88830acc934b23">
         <span class="badge">-78%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mouse gamer sem fio HyperX Haste 8R2E6AA preto</span>
         <span class="precos"><span class="preco">R$ 155,00</span><span class="antigo">R$ 699,00</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/suporte-teto-starlink-mini-base-veicular-imas-66mm-neodimio/up/MLBU3762137489?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="suporte teto starlink mini base veicular ímãs 66mm neodímio">
+      <a class="card" href="https://www.mercadolivre.com.br/suporte-teto-starlink-mini-base-veicular-imas-66mm-neodimio/up/MLBU3762137489?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="suporte teto starlink mini base veicular ímãs 66mm neodímio" data-vk="a7cb802206256859">
         <span class="badge">-78%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Suporte Teto Starlink Mini Base Veicular Ímãs 66mm Neodímio</span>
         <span class="precos"><span class="preco">R$ 178,00</span><span class="antigo">R$ 798,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/oculos-de-sol-ray-ban-justin-classic-rb4165-60171/p/MLB18184919?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="óculos de sol ray-ban justin classic rb4165 601/71">
+      <a class="card" href="https://www.mercadolivre.com.br/oculos-de-sol-ray-ban-justin-classic-rb4165-60171/p/MLB18184919?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="óculos de sol ray-ban justin classic rb4165 601/71" data-vk="c181d4435e24ff27">
         <span class="badge">-77%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Óculos de sol Ray-Ban Justin Classic RB4165 601/71</span>
         <span class="precos"><span class="preco">R$ 79,00</span><span class="antigo">R$ 349,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/fita-reparacao-couro-adesiva-10m-sofa-carro-banco-preto/up/MLBU4054703402?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fita reparacao couro adesiva 10m sofa carro banco preto">
+      <a class="card" href="https://www.mercadolivre.com.br/fita-reparacao-couro-adesiva-10m-sofa-carro-banco-preto/up/MLBU4054703402?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fita reparacao couro adesiva 10m sofa carro banco preto" data-vk="d75dbf9776ee16f6">
         <span class="badge">-77%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Fita Reparacao Couro Adesiva 10m Sofa Carro Banco Preto</span>
         <span class="precos"><span class="preco">R$ 16,00</span><span class="antigo">R$ 69,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/4pcs-hardcover-blank-notebook-vintage-chinese-style/p/MLB2084519821?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="diário manual de kung fu chinês de 4 peças: diário de cospla">
+      <a class="card" href="https://www.mercadolivre.com.br/4pcs-hardcover-blank-notebook-vintage-chinese-style/p/MLB2084519821?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="diário manual de kung fu chinês de 4 peças: diário de cospla" data-vk="ffd6a656081322e5">
         <span class="badge">-77%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Diário Manual De Kung Fu Chinês De 4 Peças: Diário De Cospla</span>
         <span class="precos"><span class="preco">R$ 60,00</span><span class="antigo">R$ 257,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/kit-para-gopro-hero13-black-caixa-estanque-e-peliculas-caixa-estanque-compativel-com-gopro-hero-910111213-black-involucro-duravel-acessorio-cmera-de-aco/p/MLB66054296?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="kit para gopro hero13 black - caixa estanque e películas, caixa estanque compatível com gopro hero 9/10/11/12/13 black - invólucro durável acessório câmera de ação">
+      <a class="card" href="https://www.mercadolivre.com.br/kit-para-gopro-hero13-black-caixa-estanque-e-peliculas-caixa-estanque-compativel-com-gopro-hero-910111213-black-involucro-duravel-acessorio-cmera-de-aco/p/MLB66054296?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="kit para gopro hero13 black - caixa estanque e películas, caixa estanque compatível com gopro hero 9/10/11/12/13 black - invólucro durável acessório câmera de ação" data-vk="be58c3693fe4edf0">
         <span class="badge">-76%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Kit Para Gopro Hero13 Black - Caixa Estanque E Películas, Caixa Estanque Compatível Com Gopro Hero 9/10/11/12/13 Black - Invólucro Durável Acessório Câmera De Ação</span>
         <span class="precos"><span class="preco">R$ 56,00</span><span class="antigo">R$ 238,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/purificador-de-agua-natural-latina-pn555-fum-escuro-na/p/MLB23998396?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="purificador de água natural latina pn555 fumê escuro n/a">
+      <a class="card" href="https://www.mercadolivre.com.br/purificador-de-agua-natural-latina-pn555-fum-escuro-na/p/MLB23998396?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="purificador de água natural latina pn555 fumê escuro n/a" data-vk="e225c821488c9575">
         <span class="badge">-76%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Purificador De Água Natural Latina Pn555 Fumê Escuro N/A</span>
         <span class="precos"><span class="preco">R$ 170,00</span><span class="antigo">R$ 706,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/fone-de-ouvido-com-viva-voz-integrado-trucker-sem-fio-mic/up/MLBU3276421460?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fone de ouvido com viva voz integrado trucker sem fio mic">
+      <a class="card" href="https://www.mercadolivre.com.br/fone-de-ouvido-com-viva-voz-integrado-trucker-sem-fio-mic/up/MLBU3276421460?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fone de ouvido com viva voz integrado trucker sem fio mic" data-vk="8f7d0cb4e8088e33">
         <span class="badge">-76%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Fone De Ouvido Com Viva Voz Integrado Trucker Sem Fio Mic</span>
         <span class="precos"><span class="preco">R$ 118,00</span><span class="antigo">R$ 485,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/album-de-figurinhas-colecionaveis-copa-do-mundo-fifa-2026/up/MLBU3946202586?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="álbum de figurinhas colecionáveis copa do mundo fifa 2026">
+      <a class="card" href="https://www.mercadolivre.com.br/album-de-figurinhas-colecionaveis-copa-do-mundo-fifa-2026/up/MLBU3946202586?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="álbum de figurinhas colecionáveis copa do mundo fifa 2026" data-vk="6bf3826a6ff1f3fa">
         <span class="badge">-75%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Álbum De Figurinhas Colecionáveis Copa Do Mundo Fifa 2026</span>
         <span class="precos"><span class="preco">R$ 49,00</span><span class="antigo">R$ 199,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/creatina-1kg-suplemento-monohidratada-em-po-100-pura-soldiers-nutrition/p/MLB18725310?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="creatina 1kg suplemento monohidratada em pó 100% pura - soldiers nutrition">
+      <a class="card" href="https://www.mercadolivre.com.br/creatina-1kg-suplemento-monohidratada-em-po-100-pura-soldiers-nutrition/p/MLB18725310?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="creatina 1kg suplemento monohidratada em pó 100% pura - soldiers nutrition" data-vk="892911e3ac838677">
         <span class="badge">-75%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Creatina 1kg Suplemento Monohidratada em pó 100% Pura - Soldiers Nutrition</span>
         <span class="precos"><span class="preco">R$ 59,00</span><span class="antigo">R$ 239,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/lixeira-inteligente-16-litros-com-sensor-automatico-para-banheiro-e-cozinha-cinza/p/MLB61847545?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="lixeira inteligente 16 litros com sensor automático para banheiro e cozinha cinza">
+      <a class="card" href="https://www.mercadolivre.com.br/lixeira-inteligente-16-litros-com-sensor-automatico-para-banheiro-e-cozinha-cinza/p/MLB61847545?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="lixeira inteligente 16 litros com sensor automático para banheiro e cozinha cinza" data-vk="f929b70324fb126f">
         <span class="badge">-75%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Lixeira Inteligente 16 Litros Com Sensor Automático Para Banheiro e Cozinha Cinza</span>
         <span class="precos"><span class="preco">R$ 64,00</span><span class="antigo">R$ 259,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/calcio-magnesio-zinco-vit-d-60-caps-maxinutri-sem-sabor/p/MLB26842597?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="cálcio + magnésio + zinco + vit d 60 caps maxinutri sem sabor">
+      <a class="card" href="https://www.mercadolivre.com.br/calcio-magnesio-zinco-vit-d-60-caps-maxinutri-sem-sabor/p/MLB26842597?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="cálcio + magnésio + zinco + vit d 60 caps maxinutri sem sabor" data-vk="8a5df05598d026dd">
         <span class="badge">-75%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Cálcio + Magnésio + Zinco + Vit D 60 Caps Maxinutri Sem sabor</span>
         <span class="precos"><span class="preco">R$ 34,00</span><span class="antigo">R$ 136,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/suporte-starlink-mini-base-carro-teto-imas-65mm-neodimio/up/MLBU3405227204?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="suporte starlink mini base carro teto ímãs 65mm neodímio">
+      <a class="card" href="https://www.mercadolivre.com.br/suporte-starlink-mini-base-carro-teto-imas-65mm-neodimio/up/MLBU3405227204?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="suporte starlink mini base carro teto ímãs 65mm neodímio" data-vk="65ff58b8ffdbfb16">
         <span class="badge">-74%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Suporte Starlink Mini Base Carro Teto Ímãs 65mm Neodímio</span>
         <span class="precos"><span class="preco">R$ 179,00</span><span class="antigo">R$ 699,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/carro-eletrico-infantil-lamborghini-urus-12v-50kg-carrinho-preto/p/MLB68257194?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="carro elétrico infantil lamborghini urus 12v 50kg carrinho preto">
+      <a class="card" href="https://www.mercadolivre.com.br/carro-eletrico-infantil-lamborghini-urus-12v-50kg-carrinho-preto/p/MLB68257194?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="carro elétrico infantil lamborghini urus 12v 50kg carrinho preto" data-vk="83f11d684493155d">
         <span class="badge">-73%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Carro Elétrico Infantil Lamborghini Urus 12v 50kg Carrinho Preto</span>
         <span class="precos"><span class="preco">R$ 2.056,00</span><span class="antigo">R$ 7.727,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/camera-de-seguranca-interna-visao-noturna-360-wifi/up/MLBU3811988635?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="câmera de segurança interna visão noturna 360° wi-fi">
+      <a class="card" href="https://www.mercadolivre.com.br/camera-de-seguranca-interna-visao-noturna-360-wifi/up/MLBU3811988635?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="câmera de segurança interna visão noturna 360° wi-fi" data-vk="da8bab0da25453f9">
         <span class="badge">-73%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Câmera De Segurança Interna Visão Noturna 360° Wi-fi</span>
         <span class="precos"><span class="preco">R$ 53,00</span><span class="antigo">R$ 198,00</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3102506128-top-puma-original-feminino-alta-sustentaco-academia-fitness-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="top puma original feminino alta sustentação academia fitness">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3102506128-top-puma-original-feminino-alta-sustentaco-academia-fitness-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="top puma original feminino alta sustentação academia fitness" data-vk="85985f4a9ed69e8c">
         <span class="badge">-73%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Top Puma Original Feminino Alta Sustentação Academia Fitness</span>
         <span class="precos"><span class="preco">R$ 40,00</span><span class="antigo">R$ 149,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/aparelho-de-presso-digital-automatico-pulso-g-tech-gp450sp-cinza/p/MLB66563777?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="aparelho de pressão digital automático pulso g-tech gp450sp cinza">
+      <a class="card" href="https://www.mercadolivre.com.br/aparelho-de-presso-digital-automatico-pulso-g-tech-gp450sp-cinza/p/MLB66563777?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="aparelho de pressão digital automático pulso g-tech gp450sp cinza" data-vk="962587acdc05398e">
         <span class="badge">-73%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Aparelho De Pressão Digital Automático Pulso G-tech Gp450sp Cinza</span>
         <span class="precos"><span class="preco">R$ 78,00</span><span class="antigo">R$ 289,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-4047815501-mouse-sem-fio-bluetooth-recarregavel-gamer-ergonmico-24g-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse sem fio bluetooth recarregável gamer ergonômico 2.4g">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-4047815501-mouse-sem-fio-bluetooth-recarregavel-gamer-ergonmico-24g-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse sem fio bluetooth recarregável gamer ergonômico 2.4g" data-vk="5a2ef371a595801d">
         <span class="badge">-73%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mouse Sem Fio Bluetooth Recarregável Gamer Ergonômico 2.4g</span>
         <span class="precos"><span class="preco">R$ 58,00</span><span class="antigo">R$ 214,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/simparic-80mg-ces-20-a-40kg-pulgas-carrapatos-sarnas-3-comprimidos/p/MLB36397017?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="simparic 80mg cães 20 a 40kg pulgas carrapatos sarnas 3 comprimidos">
+      <a class="card" href="https://www.mercadolivre.com.br/simparic-80mg-ces-20-a-40kg-pulgas-carrapatos-sarnas-3-comprimidos/p/MLB36397017?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="simparic 80mg cães 20 a 40kg pulgas carrapatos sarnas 3 comprimidos" data-vk="fed6ec30def8c8d9">
         <span class="badge">-73%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Simparic 80mg Cães 20 A 40kg Pulgas Carrapatos Sarnas 3 Comprimidos</span>
         <span class="precos"><span class="preco">R$ 120,00</span><span class="antigo">R$ 440,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/kit-10-parafuso-arruela-anodizadas-m6x20mm-jdm-tuning-carro/up/MLBU4108434285?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="kit 10 parafuso arruela anodizadas m6x20mm jdm tuning carro">
+      <a class="card" href="https://www.mercadolivre.com.br/kit-10-parafuso-arruela-anodizadas-m6x20mm-jdm-tuning-carro/up/MLBU4108434285?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="kit 10 parafuso arruela anodizadas m6x20mm jdm tuning carro" data-vk="a62e0866f0089a2c">
         <span class="badge">-72%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Kit 10 Parafuso Arruela Anodizadas M6x20mm Jdm Tuning Carro</span>
         <span class="precos"><span class="preco">R$ 19,00</span><span class="antigo">R$ 69,00</span><span class="aval">⭐ 5.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/evil-goods-balm-facial-de-sebo-batido-e-mel-100ml/p/MLB2029862457?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="evil goods balm facial de sebo batido e mel 100ml">
+      <a class="card" href="https://www.mercadolivre.com.br/evil-goods-balm-facial-de-sebo-batido-e-mel-100ml/p/MLB2029862457?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="evil goods balm facial de sebo batido e mel 100ml" data-vk="90d44c9238469eb8">
         <span class="badge">-72%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Evil Goods Balm Facial De Sebo Batido E Mel 100ml</span>
         <span class="precos"><span class="preco">R$ 19,00</span><span class="antigo">R$ 69,00</span><span class="aval">⭐ 4.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/bravecto-ces-20-40kg-1000mg-1-comp-mastigavel-msd-azul/p/MLB15982844?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="bravecto cães 20-40kg 1000mg 1 comp. mastigável msd azul">
+      <a class="card" href="https://www.mercadolivre.com.br/bravecto-ces-20-40kg-1000mg-1-comp-mastigavel-msd-azul/p/MLB15982844?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="bravecto cães 20-40kg 1000mg 1 comp. mastigável msd azul" data-vk="0e2035af5c975697">
         <span class="badge">-72%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Bravecto Cães 20-40kg 1000mg 1 Comp. Mastigável Msd Azul</span>
         <span class="precos"><span class="preco">R$ 83,00</span><span class="antigo">R$ 299,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-5525239412-macaquinho-virginia-poli-zero-transparencia-fitness-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="macaquinho virginia poli zero transparencia fitness">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-5525239412-macaquinho-virginia-poli-zero-transparencia-fitness-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="macaquinho virginia poli zero transparencia fitness" data-vk="9fe305cdb7413828">
         <span class="badge">-71%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Macaquinho Virginia Poli Zero Transparencia Fitness</span>
         <span class="precos"><span class="preco">R$ 34,00</span><span class="antigo">R$ 119,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/4k-camera-solar-ptz-bullet-security-camera-4g5g-dual-lens/up/MLBU3695558440?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="4k câmera solar ptz bullet security camera 4g/5g dual lens">
+      <a class="card" href="https://www.mercadolivre.com.br/4k-camera-solar-ptz-bullet-security-camera-4g5g-dual-lens/up/MLBU3695558440?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="4k câmera solar ptz bullet security camera 4g/5g dual lens" data-vk="a179191e78ee6079">
         <span class="badge">-71%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">4k Câmera Solar Ptz Bullet Security Camera 4g/5g Dual Lens</span>
         <span class="precos"><span class="preco">R$ 286,00</span><span class="antigo">R$ 1.000,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mochila-dos-homens-com-faixa-impermeavel-para-expansao/up/MLBU3454994034?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mochila dos homens com faixa impermeável para expansão">
+      <a class="card" href="https://www.mercadolivre.com.br/mochila-dos-homens-com-faixa-impermeavel-para-expansao/up/MLBU3454994034?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mochila dos homens com faixa impermeável para expansão" data-vk="33cbb10a1a5745d0">
         <span class="badge">-71%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mochila Dos Homens Com Faixa Impermeável Para Expansão</span>
         <span class="precos"><span class="preco">R$ 85,00</span><span class="antigo">R$ 297,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/toalha-gelada-esportiva-com-estojo-para-academia/up/MLBU4116112257?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="toalha gelada esportiva com estojo para academia">
+      <a class="card" href="https://www.mercadolivre.com.br/toalha-gelada-esportiva-com-estojo-para-academia/up/MLBU4116112257?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="toalha gelada esportiva com estojo para academia" data-vk="c82596992da351b5">
         <span class="badge">-71%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Toalha Gelada Esportiva Com Estojo Para Academia</span>
         <span class="precos"><span class="preco">R$ 19,00</span><span class="antigo">R$ 65,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/short-academia-feminino-poliamida-selene-zero-transparencia/up/MLBU2503023395?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="short academia feminino poliamida selene zero transparência">
+      <a class="card" href="https://www.mercadolivre.com.br/short-academia-feminino-poliamida-selene-zero-transparencia/up/MLBU2503023395?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="short academia feminino poliamida selene zero transparência" data-vk="2f6efbe09bf3376f">
         <span class="badge">-71%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Short Academia Feminino Poliamida Selene Zero Transparência</span>
         <span class="precos"><span class="preco">R$ 44,00</span><span class="antigo">R$ 150,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-5577840318-kit-2-macaquinho-curto-fitness-poli-academia-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="kit 2 macaquinho curto fitness poli academia">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-5577840318-kit-2-macaquinho-curto-fitness-poli-academia-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="kit 2 macaquinho curto fitness poli academia" data-vk="641e363a050a29da">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Kit 2 Macaquinho Curto Fitness Poli Academia</span>
         <span class="precos"><span class="preco">R$ 59,00</span><span class="antigo">R$ 199,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/aparelho-de-medir-presso-digital-de-braco-g-tech-bsp11-cor-branco-com-preto/p/MLB22936118?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="aparelho de medir pressão digital de braço g-tech bsp11 cor branco com preto">
+      <a class="card" href="https://www.mercadolivre.com.br/aparelho-de-medir-presso-digital-de-braco-g-tech-bsp11-cor-branco-com-preto/p/MLB22936118?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="aparelho de medir pressão digital de braço g-tech bsp11 cor branco com preto" data-vk="97cf8ff921d31c70">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Aparelho de medir pressão digital de braço G-tech BSP11 cor branco com preto</span>
         <span class="precos"><span class="preco">R$ 89,00</span><span class="antigo">R$ 299,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/relogio-smartwatch-forestory-inteligente-tela-183-bluetooth-ip68-prova-dagua-notificacoes-chamadas-saude-smart-watch-relogio-corrida-com-android-e-ios-com-2-pulseiras-feminino-masculino/p/MLB75079337?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="relógio smartwatch forestory inteligente tela 1.83 bluetooth ip68 à prova d&#x27;água notificações chamadas saúde smart watch relogio corrida com android e ios com 2 pulseiras feminino masculino">
+      <a class="card" href="https://www.mercadolivre.com.br/relogio-smartwatch-forestory-inteligente-tela-183-bluetooth-ip68-prova-dagua-notificacoes-chamadas-saude-smart-watch-relogio-corrida-com-android-e-ios-com-2-pulseiras-feminino-masculino/p/MLB75079337?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="relógio smartwatch forestory inteligente tela 1.83 bluetooth ip68 à prova d&#x27;água notificações chamadas saúde smart watch relogio corrida com android e ios com 2 pulseiras feminino masculino" data-vk="954d2d3fe28ee978">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Relógio Smartwatch FORESTORY Inteligente Tela 1.83 Bluetooth Ip68 À Prova D&#x27;água Notificações Chamadas Saúde Smart Watch Relogio Corrida Com Android E Ios Com 2 Pulseiras Feminino Masculino</span>
         <span class="precos"><span class="preco">R$ 119,00</span><span class="antigo">R$ 399,00</span><span class="aval">⭐ 5.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/relogio-smartwatch-forestory-inteligente-tela-183-bluetooth-ip68-prova-dagua-notificacoes-chamadas-saude-smart-watch-relogio-corrida-com-android-e-ios-com-2-pulseiras-feminino-masculino/p/MLB73080186?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="relógio smartwatch forestory inteligente tela 1.83 bluetooth ip68 à prova d&#x27;água notificações chamadas saúde smart watch relogio corrida com android e ios com 2 pulseiras feminino masculino">
+      <a class="card" href="https://www.mercadolivre.com.br/relogio-smartwatch-forestory-inteligente-tela-183-bluetooth-ip68-prova-dagua-notificacoes-chamadas-saude-smart-watch-relogio-corrida-com-android-e-ios-com-2-pulseiras-feminino-masculino/p/MLB73080186?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="relógio smartwatch forestory inteligente tela 1.83 bluetooth ip68 à prova d&#x27;água notificações chamadas saúde smart watch relogio corrida com android e ios com 2 pulseiras feminino masculino" data-vk="8bfd3b72a002e887">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Relógio Smartwatch FORESTORY Inteligente Tela 1.83 Bluetooth Ip68 À Prova D&#x27;água Notificações Chamadas Saúde Smart Watch Relogio Corrida Com Android E Ios Com 2 Pulseiras Feminino Masculino</span>
         <span class="precos"><span class="preco">R$ 119,00</span><span class="antigo">R$ 399,00</span><span class="aval">⭐ 5.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-5381436588-mouse-sem-fio-recarregavel-bluetooth24g-gamer-ergonmico-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse sem fio recarregável bluetooth2.4g gamer ergonômico">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-5381436588-mouse-sem-fio-recarregavel-bluetooth24g-gamer-ergonmico-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse sem fio recarregável bluetooth2.4g gamer ergonômico" data-vk="bc18773f4a33561a">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mouse Sem Fio Recarregável Bluetooth2.4g Gamer Ergonômico</span>
         <span class="precos"><span class="preco">R$ 58,00</span><span class="antigo">R$ 194,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/fritadeira-black-perform-45l-oster-ofrt510/p/MLB35961672?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fritadeira black perform 4,5l oster ofrt510">
+      <a class="card" href="https://www.mercadolivre.com.br/fritadeira-black-perform-45l-oster-ofrt510/p/MLB35961672?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fritadeira black perform 4,5l oster ofrt510" data-vk="fcbe79bfcf1d2070">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Fritadeira Black Perform 4,5L Oster OFRT510</span>
         <span class="precos"><span class="preco">R$ 209,00</span><span class="antigo">R$ 699,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/fritadeira-air-fryer-philco-paf16a-4-em-1-painel-digital-16l-preto/p/MLB46016994?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fritadeira air fryer philco paf16a 4 em 1 painel digital 16l preto">
+      <a class="card" href="https://www.mercadolivre.com.br/fritadeira-air-fryer-philco-paf16a-4-em-1-painel-digital-16l-preto/p/MLB46016994?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fritadeira air fryer philco paf16a 4 em 1 painel digital 16l preto" data-vk="b6591ab40681d4d7">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Fritadeira air fryer philco PAF16A 4 em 1 painel digital 16l preto</span>
         <span class="precos"><span class="preco">R$ 541,00</span><span class="antigo">R$ 1.800,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3781902941-top-lupo-loba-fitness-confortavel-otima-sustentaco-academia-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="top lupo loba fitness confortável ótima sustentação academia">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3781902941-top-lupo-loba-fitness-confortavel-otima-sustentaco-academia-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="top lupo loba fitness confortável ótima sustentação academia" data-vk="6018060651745219">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Top Lupo Loba Fitness Confortável Ótima Sustentação Academia</span>
         <span class="precos"><span class="preco">R$ 45,00</span><span class="antigo">R$ 149,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mixer-eletrico-portatil-2-em-1-recarregavel-potente-misturador-de-bebidas-e-ovos-3-velocidades-usb-batedor-e-fue-fouet-marca-woosh/p/MLB20306137?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mixer elétrico portátil 2 em 1 recarregável potente misturador de bebidas e ovos 3 velocidades usb batedor e fue fouet marca woosh">
+      <a class="card" href="https://www.mercadolivre.com.br/mixer-eletrico-portatil-2-em-1-recarregavel-potente-misturador-de-bebidas-e-ovos-3-velocidades-usb-batedor-e-fue-fouet-marca-woosh/p/MLB20306137?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mixer elétrico portátil 2 em 1 recarregável potente misturador de bebidas e ovos 3 velocidades usb batedor e fue fouet marca woosh" data-vk="0ac569cbc3d95dd0">
         <span class="badge">-70%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mixer Elétrico Portátil 2 em 1 Recarregável Potente Misturador de Bebidas e Ovos 3 Velocidades Usb Batedor e Fue Fouet Marca Woosh</span>
         <span class="precos"><span class="preco">R$ 21,00</span><span class="antigo">R$ 69,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3849943671-shorts-feminino-tactel-academia-bermuda-treino-fitness-praia-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="shorts feminino tactel academia bermuda treino fitness praia">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3849943671-shorts-feminino-tactel-academia-bermuda-treino-fitness-praia-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="shorts feminino tactel academia bermuda treino fitness praia" data-vk="bd5df91eda507f66">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Shorts Feminino Tactel Academia Bermuda Treino Fitness Praia</span>
         <span class="precos"><span class="preco">R$ 15,00</span><span class="antigo">R$ 49,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/fone-de-ouvido-kz-edx-pro-x-preto-com-microfone/p/MLB36821823?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fone de ouvido kz edx pro x preto com microfone">
+      <a class="card" href="https://www.mercadolivre.com.br/fone-de-ouvido-kz-edx-pro-x-preto-com-microfone/p/MLB36821823?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fone de ouvido kz edx pro x preto com microfone" data-vk="8a2e7541b614cae3">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Fone De Ouvido Kz Edx Pro X Preto Com Microfone</span>
         <span class="precos"><span class="preco">R$ 61,00</span><span class="antigo">R$ 199,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/inalador-nebulizador-tech-portatil-pulse-n21-silencioso-anvisa-branco/p/MLB68845029?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="inalador nebulizador tech portátil pulse n21 - silencioso anvisa branco">
+      <a class="card" href="https://www.mercadolivre.com.br/inalador-nebulizador-tech-portatil-pulse-n21-silencioso-anvisa-branco/p/MLB68845029?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="inalador nebulizador tech portátil pulse n21 - silencioso anvisa branco" data-vk="c97005c3ceccffda">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Inalador Nebulizador Tech Portátil Pulse N21 - Silencioso Anvisa Branco</span>
         <span class="precos"><span class="preco">R$ 89,00</span><span class="antigo">R$ 289,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/fone-de-ouvido-bluetooth-academia-kaidi-790-portatil-branco/up/MLBU3743199310?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fone de ouvido bluetooth academia kaidi 790 portátil branco">
+      <a class="card" href="https://www.mercadolivre.com.br/fone-de-ouvido-bluetooth-academia-kaidi-790-portatil-branco/up/MLBU3743199310?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="fone de ouvido bluetooth academia kaidi 790 portátil branco" data-vk="6e64240e0884d787">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Fone De Ouvido Bluetooth Academia Kaidi 790 Portátil Branco</span>
         <span class="precos"><span class="preco">R$ 46,00</span><span class="antigo">R$ 149,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3645524742-short-benevola-poliamida-sem-costura-bermuda-confortavel-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="short benévola poliamida sem costura bermuda confortável">
+      <a class="card" href="https://produto.mercadolivre.com.br/MLB-3645524742-short-benevola-poliamida-sem-costura-bermuda-confortavel-_JM?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="short benévola poliamida sem costura bermuda confortável" data-vk="b47c5d8f62dc51c3">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Short Benévola Poliamida Sem Costura Bermuda Confortável</span>
         <span class="precos"><span class="preco">R$ 46,00</span><span class="antigo">R$ 149,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/case-veicular-starlink-mini-profissional-com-super-imas-66mm/up/MLBU3805523633?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="case veicular starlink mini profissional com super imãs 66mm">
+      <a class="card" href="https://www.mercadolivre.com.br/case-veicular-starlink-mini-profissional-com-super-imas-66mm/up/MLBU3805523633?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="case veicular starlink mini profissional com super imãs 66mm" data-vk="2c2a39af5c4c83a2">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Case Veicular Starlink Mini Profissional Com Super Imãs 66mm</span>
         <span class="precos"><span class="preco">R$ 191,00</span><span class="antigo">R$ 618,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/meia-soquete-feminina-cano-curto-kit-5-pares/up/MLBU4191339164?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="meia soquete feminina cano curto kit 5 pares">
+      <a class="card" href="https://www.mercadolivre.com.br/meia-soquete-feminina-cano-curto-kit-5-pares/up/MLBU4191339164?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="meia soquete feminina cano curto kit 5 pares" data-vk="b76ecfc0fe6ca281">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Meia Soquete Feminina Cano Curto Kit 5 Pares</span>
         <span class="precos"><span class="preco">R$ 22,00</span><span class="antigo">R$ 71,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/baba-eletrnica-baby-monitor-vb603-viso-noturna-dual-audio-cor-branco-estary-shop/p/MLB47899174?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="baba eletrônica baby monitor vb603 visão noturna dual audio cor branco estary shop">
+      <a class="card" href="https://www.mercadolivre.com.br/baba-eletrnica-baby-monitor-vb603-viso-noturna-dual-audio-cor-branco-estary-shop/p/MLB47899174?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="baba eletrônica baby monitor vb603 visão noturna dual audio cor branco estary shop" data-vk="559b540b076248f5">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Baba Eletrônica Baby Monitor Vb603 Visão Noturna Dual Audio Cor Branco Estary Shop</span>
         <span class="precos"><span class="preco">R$ 193,00</span><span class="antigo">R$ 619,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/bravox-b3x60-x-6-pretoprata-triaxial-alto-falante-6/p/MLB6117456?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="bravox b3x60 x 6 preto/prata triaxial alto falante 6">
+      <a class="card" href="https://www.mercadolivre.com.br/bravox-b3x60-x-6-pretoprata-triaxial-alto-falante-6/p/MLB6117456?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="bravox b3x60 x 6 preto/prata triaxial alto falante 6" data-vk="6bb9779122271773">
         <span class="badge">-69%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Bravox B3X60 X 6 Preto/Prata Triaxial Alto Falante 6</span>
         <span class="precos"><span class="preco">R$ 74,00</span><span class="antigo">R$ 236,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/suporte-starlink-mini-veicular-4-ventosas-painel-parabrisa/up/MLBU3887898807?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="suporte starlink mini veicular 4 ventosas painel para-brisa">
+      <a class="card" href="https://www.mercadolivre.com.br/suporte-starlink-mini-veicular-4-ventosas-painel-parabrisa/up/MLBU3887898807?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="suporte starlink mini veicular 4 ventosas painel para-brisa" data-vk="2fa9a0e9b09a9c92">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Suporte Starlink Mini Veicular 4 Ventosas Painel Para-brisa</span>
         <span class="precos"><span class="preco">R$ 63,00</span><span class="antigo">R$ 199,00</span><span class="aval">⭐ 5.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mini-repetidor-wi-fi-usb-amplificador-24ghz-300mbps/p/MLB2076948098?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mini repetidor wi-fi usb amplificador 2.4ghz 300mbps">
+      <a class="card" href="https://www.mercadolivre.com.br/mini-repetidor-wi-fi-usb-amplificador-24ghz-300mbps/p/MLB2076948098?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mini repetidor wi-fi usb amplificador 2.4ghz 300mbps" data-vk="3c8814c7500692dc">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mini Repetidor Wi-fi Usb Amplificador 2.4ghz 300mbps</span>
         <span class="precos"><span class="preco">R$ 35,00</span><span class="antigo">R$ 110,00</span><span class="aval">⭐ 4.3</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/relogio-academia-preto-relogio-para-academia-smartwatch-esportivo-com-bateria-longa-duraco-resistente-agua-monitoramento-de-saude-e-atividades-fisicas-para-treinos-diarios/p/MLB69987420?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="relógio academia preto, relógio para academia smartwatch esportivo com bateria longa duração, resistente à água, monitoramento de saúde e atividades físicas para treinos diários">
+      <a class="card" href="https://www.mercadolivre.com.br/relogio-academia-preto-relogio-para-academia-smartwatch-esportivo-com-bateria-longa-duraco-resistente-agua-monitoramento-de-saude-e-atividades-fisicas-para-treinos-diarios/p/MLB69987420?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="relógio academia preto, relógio para academia smartwatch esportivo com bateria longa duração, resistente à água, monitoramento de saúde e atividades físicas para treinos diários" data-vk="3714da654648bd60">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Relógio Academia Preto, Relógio Para Academia Smartwatch Esportivo Com Bateria Longa Duração, Resistente À Água, Monitoramento De Saúde E Atividades Físicas Para Treinos Diários</span>
         <span class="precos"><span class="preco">R$ 95,00</span><span class="antigo">R$ 297,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/inalador-nebulizador-mesh-portatil-pratico-infantil-bebe-e-adulto-silencioso-com-controle-de-nevoa-compacto-e-versatil-sem-fio-c-2-pilhas-goodvision-cor-azul-e-branco-bivolt/p/MLB57664376?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="inalador nebulizador mesh portátil pratico infantil, bebe e adulto silencioso com controle de névoa compacto e versátil sem fio c/ 2 pilhas goodvision cor azul e branco bivolt">
+      <a class="card" href="https://www.mercadolivre.com.br/inalador-nebulizador-mesh-portatil-pratico-infantil-bebe-e-adulto-silencioso-com-controle-de-nevoa-compacto-e-versatil-sem-fio-c-2-pilhas-goodvision-cor-azul-e-branco-bivolt/p/MLB57664376?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="inalador nebulizador mesh portátil pratico infantil, bebe e adulto silencioso com controle de névoa compacto e versátil sem fio c/ 2 pilhas goodvision cor azul e branco bivolt" data-vk="c0a46e0f62d68d1a">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Inalador Nebulizador Mesh Portátil Pratico Infantil, Bebe E Adulto Silencioso Com Controle De Névoa Compacto E Versátil Sem Fio C/ 2 Pilhas Goodvision Cor Azul E Branco Bivolt</span>
         <span class="precos"><span class="preco">R$ 25,00</span><span class="antigo">R$ 78,00</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/livro-de-colorir-stitch-rosa-livro-de-colorir-estilo-bobbie-goods-de-bobie-goods-infantil-vol-1-editorial-thr-capa-dura-edico-livro-de-colorir-em-portugus-2025/p/MLB47903051?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="livro de colorir stitch rosa: livro de colorir estilo bobbie goods, de bobie goods. infantil, vol. 1. editorial thr, capa dura, edição livro de colorir em português, 2025">
+      <a class="card" href="https://www.mercadolivre.com.br/livro-de-colorir-stitch-rosa-livro-de-colorir-estilo-bobbie-goods-de-bobie-goods-infantil-vol-1-editorial-thr-capa-dura-edico-livro-de-colorir-em-portugus-2025/p/MLB47903051?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="livro de colorir stitch rosa: livro de colorir estilo bobbie goods, de bobie goods. infantil, vol. 1. editorial thr, capa dura, edição livro de colorir em português, 2025" data-vk="6cd032e9ea435d05">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Livro De Colorir Stitch Rosa: Livro De Colorir Estilo Bobbie Goods, De Bobie Goods. Infantil, Vol. 1. Editorial Thr, Capa Dura, Edição Livro De Colorir Em Português, 2025</span>
         <span class="precos"><span class="preco">R$ 19,00</span><span class="antigo">R$ 59,00</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/mouse-pad-preto-escritorio-office-liso-sem-estampa-borracha-antiderrapante-18x22cm-digital-informatica/p/MLB67464880?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse pad preto escritório office liso sem estampa borracha antiderrapante 18x22cm digital informatica">
+      <a class="card" href="https://www.mercadolivre.com.br/mouse-pad-preto-escritorio-office-liso-sem-estampa-borracha-antiderrapante-18x22cm-digital-informatica/p/MLB67464880?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="mouse pad preto escritório office liso sem estampa borracha antiderrapante 18x22cm digital informatica" data-vk="c30d60a6c9fac4f2">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Mouse Pad Preto Escritório Office Liso Sem Estampa Borracha Antiderrapante 18x22cm Digital Informatica</span>
         <span class="precos"><span class="preco">R$ 19,00</span><span class="antigo">R$ 59,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.mercadolivre.com.br/chs-40-rj9-headset-entrada-telefone-monoauricular-intelbras/p/MLB27042008?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="chs 40 rj9 headset entrada telefone monoauricular intelbras">
+      <a class="card" href="https://www.mercadolivre.com.br/chs-40-rj9-headset-entrada-telefone-monoauricular-intelbras/p/MLB27042008?matt_word=ch1ld3r1co&amp;matt_tool=86899916&amp;forceInApp=true" target="_blank" rel="noopener sponsored" data-loja="ml" data-busca="chs 40 rj9 headset entrada telefone monoauricular intelbras" data-vk="1efe795402c36b72">
         <span class="badge">-68%</span>
         <span class="loja ml">Mercado Livre</span>
         <span class="titulo">Chs 40 Rj9 Headset Entrada Telefone Monoauricular Intelbras</span>
         <span class="precos"><span class="preco">R$ 77,00</span><span class="antigo">R$ 239,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B07B9ZYR6B?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="filtro/refil de água para purificador pe11, branco, electrolux, 41037245">
+      <a class="card" href="https://www.amazon.com.br/dp/B07B9ZYR6B?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="filtro/refil de água para purificador pe11, branco, electrolux, 41037245" data-vk="9b8dcec318d1bf42">
         <span class="badge">-59%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Filtro/Refil de Água para Purificador PE11, Branco, Electrolux, 41037245</span>
         <span class="precos"><span class="preco">R$ 62,90</span><span class="antigo">R$ 154,90</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B09DBPRGYY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="mimo style colher bailarina, com cabo alongado, mede 30,5cm de altura, utensílio suporta altas e baixas temperaturas, produzida inteiramente em aço inoxidável, ideal no preparo de drinks e coquetéis">
+      <a class="card" href="https://www.amazon.com.br/dp/B09DBPRGYY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="mimo style colher bailarina, com cabo alongado, mede 30,5cm de altura, utensílio suporta altas e baixas temperaturas, produzida inteiramente em aço inoxidável, ideal no preparo de drinks e coquetéis" data-vk="9511d901f71d813f">
         <span class="badge">-59%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Mimo Style Colher Bailarina, Com Cabo Alongado, Mede 30,5cm de Altura, Utensílio Suporta Altas e Baixas Temperaturas, Produzida Inteiramente Em Aço Inoxidável, Ideal No Preparo De Drinks e Coquetéis</span>
         <span class="precos"><span class="preco">R$ 19,50</span><span class="antigo">R$ 47,70</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CGSX7J5Y?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="adoleta bebê kit 03 pares de meias lisas 12 a 36 meses menino">
+      <a class="card" href="https://www.amazon.com.br/dp/B0CGSX7J5Y?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="adoleta bebê kit 03 pares de meias lisas 12 a 36 meses menino" data-vk="cea2fb085dbfb89c">
         <span class="badge">-59%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Adoleta Bebê Kit 03 Pares de Meias Lisas 12 a 36 Meses Menino</span>
         <span class="precos"><span class="preco">R$ 20,60</span><span class="antigo">R$ 49,90</span><span class="aval">⭐ 4.4</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B09NNWWGXM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="sonne kit higiene e cuidados do bebê maletinha presente branco">
+      <a class="card" href="https://www.amazon.com.br/dp/B09NNWWGXM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="sonne kit higiene e cuidados do bebê maletinha presente branco" data-vk="13e2d9ec515044b9">
         <span class="badge">-58%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Sonne Kit Higiene E Cuidados Do Bebê Maletinha Presente Branco</span>
         <span class="precos"><span class="preco">R$ 21,01</span><span class="antigo">R$ 50,00</span><span class="aval">⭐ 4.4</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B07C8NWV2R?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="caneta, faber-castell, mt/eszf, multicor, pacote de 4">
+      <a class="card" href="https://www.amazon.com.br/dp/B07C8NWV2R?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="caneta, faber-castell, mt/eszf, multicor, pacote de 4" data-vk="4bcd0fe12d7632a1">
         <span class="badge">-58%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Caneta, Faber-Castell, MT/ESZF, Multicor, pacote de 4</span>
         <span class="precos"><span class="preco">R$ 8,90</span><span class="antigo">R$ 21,04</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0C6Y843TX?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="central zigbee wi-fi agl home – hub de automação inteligente – controle por app, controle remoto 433,92 mhz e comando de voz – rede 2.4 ghz">
+      <a class="card" href="https://www.amazon.com.br/dp/B0C6Y843TX?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="central zigbee wi-fi agl home – hub de automação inteligente – controle por app, controle remoto 433,92 mhz e comando de voz – rede 2.4 ghz" data-vk="1f9662a645471f64">
         <span class="badge">-57%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Central ZigBee Wi-Fi AGL Home – Hub de Automação Inteligente – Controle por App, Controle Remoto 433,92 MHz e Comando de Voz – Rede 2.4 GHz</span>
         <span class="precos"><span class="preco">R$ 55,00</span><span class="antigo">R$ 128,99</span><span class="aval">⭐ 4.2</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B078J986FR?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="flash limp refil para mop7671 limpeza geral plus rmop7671">
+      <a class="card" href="https://www.amazon.com.br/dp/B078J986FR?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="flash limp refil para mop7671 limpeza geral plus rmop7671" data-vk="aa2385484393fdf8">
         <span class="badge">-57%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Flash Limp Refil Para Mop7671 Limpeza Geral Plus Rmop7671</span>
         <span class="precos"><span class="preco">R$ 29,99</span><span class="antigo">R$ 69,97</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B076YFJVT6?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="wap aspirador de pó e água gtw 10, compacto, 10 litros, com mangueira de 1,5 metros, filtro lavável, 140mbar 1400w 220v">
+      <a class="card" href="https://www.amazon.com.br/dp/B076YFJVT6?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="wap aspirador de pó e água gtw 10, compacto, 10 litros, com mangueira de 1,5 metros, filtro lavável, 140mbar 1400w 220v" data-vk="bdbe24de2ae5ab6f">
         <span class="badge">-56%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">WAP Aspirador de Pó e Água GTW 10, Compacto, 10 Litros, com Mangueira de 1,5 Metros, Filtro Lavável, 140mbar 1400W 220V</span>
         <span class="precos"><span class="preco">R$ 218,45</span><span class="antigo">R$ 499,90</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/6550440157?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="black friday no brasil: conheça e se prepare melhor para a ação comercial que mais cresce no país">
+      <a class="card" href="https://www.amazon.com.br/dp/6550440157?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="black friday no brasil: conheça e se prepare melhor para a ação comercial que mais cresce no país" data-vk="3ba16a6a237c7266">
         <span class="badge">-56%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Black Friday no Brasil: Conheça e se prepare melhor para a ação comercial que mais cresce no país</span>
         <span class="precos"><span class="preco">R$ 21,96</span><span class="antigo">R$ 49,90</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0FJ52JBLR?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="agenda planner ciceros 2026 classica semanal anotacoes 14x21 verde oliva">
+      <a class="card" href="https://www.amazon.com.br/dp/B0FJ52JBLR?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="agenda planner ciceros 2026 classica semanal anotacoes 14x21 verde oliva" data-vk="9da492d89e603efa">
         <span class="badge">-56%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">AGENDA PLANNER CICEROS 2026 CLASSICA SEMANAL ANOTACOES 14X21 VERDE OLIVA</span>
         <span class="precos"><span class="preco">R$ 33,00</span><span class="antigo">R$ 74,99</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B076CQD4RY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="greika yh804 tripé de iluminação de 2,4 metros para estudio, flash tocha e iluminador led">
+      <a class="card" href="https://www.amazon.com.br/dp/B076CQD4RY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="greika yh804 tripé de iluminação de 2,4 metros para estudio, flash tocha e iluminador led" data-vk="d05b58f025864231">
         <span class="badge">-56%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Greika YH804 Tripé de Iluminação de 2,4 Metros para Estudio, Flash Tocha e Iluminador Led</span>
         <span class="precos"><span class="preco">R$ 150,00</span><span class="antigo">R$ 340,00</span><span class="aval">⭐ 4.2</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B08R93TVRG?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fritadeira philco air fryer oven 12l pfr2200p - 127v">
+      <a class="card" href="https://www.amazon.com.br/dp/B08R93TVRG?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fritadeira philco air fryer oven 12l pfr2200p - 127v" data-vk="c467d23d080c3785">
         <span class="badge">-56%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Fritadeira Philco Air Fryer Oven 12L PFR2200P - 127V</span>
         <span class="precos"><span class="preco">R$ 530,23</span><span class="antigo">R$ 1.199,90</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/8535938915?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="como enfrentar o ódio: a internet e a luta pela democracia">
+      <a class="card" href="https://www.amazon.com.br/dp/8535938915?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="como enfrentar o ódio: a internet e a luta pela democracia" data-vk="bcfcac36ba03fd92">
         <span class="badge">-56%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Como enfrentar o ódio: A internet e a luta pela democracia</span>
         <span class="precos"><span class="preco">R$ 32,29</span><span class="antigo">R$ 72,90</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B07V9W6N8P?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="nexgard antipulgas e carrapatos para cães de 25,1 a 50kg - 3 tabletes">
+      <a class="card" href="https://www.amazon.com.br/dp/B07V9W6N8P?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="nexgard antipulgas e carrapatos para cães de 25,1 a 50kg - 3 tabletes" data-vk="2a345f785e52eeaa">
         <span class="badge">-55%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">NexGard Antipulgas e Carrapatos para Cães de 25,1 a 50kg - 3 tabletes</span>
         <span class="precos"><span class="preco">R$ 178,97</span><span class="antigo">R$ 402,00</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0788N6QN2?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="porta objetos dellocolor, dello, 3029.h.0012, cristal">
+      <a class="card" href="https://www.amazon.com.br/dp/B0788N6QN2?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="porta objetos dellocolor, dello, 3029.h.0012, cristal" data-vk="b28b7fd15a8b21ff">
         <span class="badge">-55%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Porta Objetos Dellocolor, Dello, 3029.H.0012, Cristal</span>
         <span class="precos"><span class="preco">R$ 12,20</span><span class="antigo">R$ 26,97</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0765SRRHC?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="elg, a06v6_s, suporte pedestal com rodízios , altura regulável de 1017mm a 1417mm, para tvs a partir de 32&quot; e até 50kg, com bandeja, ajuste de inclinação, preto">
+      <a class="card" href="https://www.amazon.com.br/dp/B0765SRRHC?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="elg, a06v6_s, suporte pedestal com rodízios , altura regulável de 1017mm a 1417mm, para tvs a partir de 32&quot; e até 50kg, com bandeja, ajuste de inclinação, preto" data-vk="222e33530b7f2a1f">
         <span class="badge">-54%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">ELG, A06V6_S, Suporte Pedestal com Rodízios , Altura Regulável de 1017mm a 1417mm, Para TVs a Partir de 32&quot; e Até 50kg, Com Bandeja, Ajuste de Inclinação, Preto</span>
         <span class="precos"><span class="preco">R$ 549,00</span><span class="antigo">R$ 1.199,90</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BG96522V?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="maleta artistica barbie 42 pcs">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BG96522V?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="maleta artistica barbie 42 pcs" data-vk="9429e6dea9ffb018">
         <span class="badge">-54%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">MALETA ARTISTICA BARBIE 42 PCS</span>
         <span class="precos"><span class="preco">R$ 22,40</span><span class="antigo">R$ 48,42</span><span class="aval">⭐ 4.4</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B076BCVVV4?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="mor - piscina inflável 2.400 litros">
+      <a class="card" href="https://www.amazon.com.br/dp/B076BCVVV4?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="mor - piscina inflável 2.400 litros" data-vk="c443f94599bcaa71">
         <span class="badge">-54%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Mor - Piscina Inflável 2.400 Litros</span>
         <span class="precos"><span class="preco">R$ 194,90</span><span class="antigo">R$ 419,90</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B077PLGGJX?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="estrela, jogo cara a cara, ‎53 peças">
+      <a class="card" href="https://www.amazon.com.br/dp/B077PLGGJX?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="estrela, jogo cara a cara, ‎53 peças" data-vk="c17b2b5faefd8a11">
         <span class="badge">-53%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Estrela, Jogo Cara a Cara, ‎53 peças</span>
         <span class="precos"><span class="preco">R$ 55,92</span><span class="antigo">R$ 119,99</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B09LNLM4FX?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ferro a vapor oster aeroceramic, filtro anticalcário, vermelho - gcstbs5053">
+      <a class="card" href="https://www.amazon.com.br/dp/B09LNLM4FX?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ferro a vapor oster aeroceramic, filtro anticalcário, vermelho - gcstbs5053" data-vk="45038de7da9e2db7">
         <span class="badge">-53%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Ferro a Vapor Oster Aeroceramic, Filtro Anticalcário, Vermelho - GCSTBS5053</span>
         <span class="precos"><span class="preco">R$ 77,31</span><span class="antigo">R$ 164,90</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0DGMTRCWB?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="vaporizador de roupas portátil arno steam travel hs11 220v">
+      <a class="card" href="https://www.amazon.com.br/dp/B0DGMTRCWB?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="vaporizador de roupas portátil arno steam travel hs11 220v" data-vk="dace7dd2cb761ab2">
         <span class="badge">-53%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Vaporizador de Roupas Portátil Arno Steam Travel HS11 220V</span>
         <span class="precos"><span class="preco">R$ 149,99</span><span class="antigo">R$ 319,00</span><span class="aval">⭐ 4.3</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B07NQ9PFKN?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="flash limp - mop giratório fit, balde 8 litros - mop5010">
+      <a class="card" href="https://www.amazon.com.br/dp/B07NQ9PFKN?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="flash limp - mop giratório fit, balde 8 litros - mop5010" data-vk="e51e5ad560bb1cbe">
         <span class="badge">-53%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Flash Limp - Mop Giratório Fit, Balde 8 litros - MOP5010</span>
         <span class="precos"><span class="preco">R$ 66,00</span><span class="antigo">R$ 139,88</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0DP7R16J7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="marvel, action figure, capitão américa, admirável mundo novo - figura articulada com 30 cm - a partir de 4 anos">
+      <a class="card" href="https://www.amazon.com.br/dp/B0DP7R16J7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="marvel, action figure, capitão américa, admirável mundo novo - figura articulada com 30 cm - a partir de 4 anos" data-vk="633aacedfe19387d">
         <span class="badge">-53%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Marvel, Action Figure, Capitão América, Admirável Mundo Novo - Figura Articulada com 30 cm - A partir de 4 Anos</span>
         <span class="precos"><span class="preco">R$ 97,64</span><span class="antigo">R$ 206,00</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B08TQGGTCC?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="luminária inteligente 18w 3000-6500k wifi elgin quadrada de embutir compatível com alexa e google home">
+      <a class="card" href="https://www.amazon.com.br/dp/B08TQGGTCC?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="luminária inteligente 18w 3000-6500k wifi elgin quadrada de embutir compatível com alexa e google home" data-vk="97f8309cb12b0f3e">
         <span class="badge">-52%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Luminária Inteligente 18W 3000-6500K Wifi Elgin Quadrada de Embutir compatível com Alexa e Google Home</span>
         <span class="precos"><span class="preco">R$ 85,40</span><span class="antigo">R$ 179,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/6585430085?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="a esperança nos visitou: histórias de acolhimento espiritual na saúde">
+      <a class="card" href="https://www.amazon.com.br/dp/6585430085?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="a esperança nos visitou: histórias de acolhimento espiritual na saúde" data-vk="80e20f8a5a00a923">
         <span class="badge">-52%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">A Esperança Nos Visitou: histórias de acolhimento espiritual na saúde</span>
         <span class="precos"><span class="preco">R$ 28,80</span><span class="antigo">R$ 59,90</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B081VTWDCS?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="brasforma bra3.0 suporte articulado para tv led e lcd de 10-56&quot;, preto">
+      <a class="card" href="https://www.amazon.com.br/dp/B081VTWDCS?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="brasforma bra3.0 suporte articulado para tv led e lcd de 10-56&quot;, preto" data-vk="1732efb4df86e35e">
         <span class="badge">-52%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Brasforma BRA3.0 Suporte Articulado para TV LED e LCD de 10-56&quot;, Preto</span>
         <span class="precos"><span class="preco">R$ 37,90</span><span class="antigo">R$ 78,60</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CBJ1F1D9?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="carregador veicular para iphone pd usb-c lightning kaidi kd-304cl turbo 38w carregamento rápido 3 saidas">
+      <a class="card" href="https://www.amazon.com.br/dp/B0CBJ1F1D9?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="carregador veicular para iphone pd usb-c lightning kaidi kd-304cl turbo 38w carregamento rápido 3 saidas" data-vk="e47a0d3e4112e484">
         <span class="badge">-52%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Carregador Veicular para Iphone PD USB-C Lightning KAIDI KD-304CL Turbo 38W Carregamento Rápido 3 Saidas</span>
         <span class="precos"><span class="preco">R$ 29,99</span><span class="antigo">R$ 61,86</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B07GTMGKY1?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="milagre creme para pentear 450g , lola cosmetics">
+      <a class="card" href="https://www.amazon.com.br/dp/B07GTMGKY1?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="milagre creme para pentear 450g , lola cosmetics" data-vk="11262e0c802fb789">
         <span class="badge">-52%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Milagre Creme para Pentear 450g , Lola Cosmetics</span>
         <span class="precos"><span class="preco">R$ 34,82</span><span class="antigo">R$ 71,80</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CCXGHTXJ?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="suporte minimalista para controle do xbox suporte de mesa para controle xbox series x branco">
+      <a class="card" href="https://www.amazon.com.br/dp/B0CCXGHTXJ?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="suporte minimalista para controle do xbox suporte de mesa para controle xbox series x branco" data-vk="8d8454ba67bc06e0">
         <span class="badge">-51%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Suporte minimalista para controle do Xbox Suporte de mesa para Controle Xbox Series X Branco</span>
         <span class="precos"><span class="preco">R$ 49,00</span><span class="antigo">R$ 99,90</span><span class="aval">⭐ 3.3</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BH9BKBTN?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="interruptor simples e tomada usb parede jwcom smart su-m12">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BH9BKBTN?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="interruptor simples e tomada usb parede jwcom smart su-m12" data-vk="b27705fa72326842">
         <span class="badge">-51%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Interruptor Simples e Tomada USB Parede JWCOM SMART SU-M12</span>
         <span class="precos"><span class="preco">R$ 31,90</span><span class="antigo">R$ 64,73</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BNW3WTCT?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="hogwarts legacy - playstation 4">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BNW3WTCT?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="hogwarts legacy - playstation 4" data-vk="dbded36548e5c7c6">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Hogwarts Legacy - PlayStation 4</span>
         <span class="precos"><span class="preco">R$ 148,70</span><span class="antigo">R$ 299,90</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B09XJ8YZHK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fun, disney pelúcias stitch 20cm">
+      <a class="card" href="https://www.amazon.com.br/dp/B09XJ8YZHK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fun, disney pelúcias stitch 20cm" data-vk="2d4db7f4cbc63942">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">fun, Disney Pelúcias Stitch 20cm</span>
         <span class="precos"><span class="preco">R$ 49,91</span><span class="antigo">R$ 99,99</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B09XJ8JL18?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="disney pelúcias mickey 20cm">
+      <a class="card" href="https://www.amazon.com.br/dp/B09XJ8JL18?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="disney pelúcias mickey 20cm" data-vk="6f9bfe1ed442cd20">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Disney Pelúcias Mickey 20cm</span>
         <span class="precos"><span class="preco">R$ 49,91</span><span class="antigo">R$ 99,99</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0DCLXRD5X?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fogão elétrico portátil cooktop elgin double cook 2 bocas - 220v">
+      <a class="card" href="https://www.amazon.com.br/dp/B0DCLXRD5X?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fogão elétrico portátil cooktop elgin double cook 2 bocas - 220v" data-vk="0653064840c41016">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Fogão Elétrico Portátil Cooktop Elgin Double Cook 2 Bocas - 220V</span>
         <span class="precos"><span class="preco">R$ 79,90</span><span class="antigo">R$ 159,90</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BRS3WVHP?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="d´cheff sal grosso com lemon pepper 500 gramas">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BRS3WVHP?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="d´cheff sal grosso com lemon pepper 500 gramas" data-vk="84e028795b438102">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">D´Cheff Sal Grosso Com Lemon Pepper 500 Gramas</span>
         <span class="precos"><span class="preco">R$ 20,90</span><span class="antigo">R$ 41,80</span><span class="aval">⭐ 4.2</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CW3P223H?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="regata">
+      <a class="card" href="https://www.amazon.com.br/dp/B0CW3P223H?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="regata" data-vk="2549f0becdec8602">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Regata</span>
         <span class="precos"><span class="preco">R$ 59,99</span><span class="antigo">R$ 119,90</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0B9ZC4JNH?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ordene - organizador para batons com 9 divisórias, cor transparente, linha hana">
+      <a class="card" href="https://www.amazon.com.br/dp/B0B9ZC4JNH?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ordene - organizador para batons com 9 divisórias, cor transparente, linha hana" data-vk="94874701ddaf750a">
         <span class="badge">-50%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Ordene - Organizador para Batons com 9 Divisórias, Cor Transparente, Linha Hana</span>
         <span class="precos"><span class="preco">R$ 16,90</span><span class="antigo">R$ 33,50</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B08ZGYHBJ7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="elg, f410, suporte articulado de parede, pistão a gás, design ergonômico e ajustável, monitores 17&#x27;&#x27; a 34&#x27;&#x27;, preto">
+      <a class="card" href="https://www.amazon.com.br/dp/B08ZGYHBJ7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="elg, f410, suporte articulado de parede, pistão a gás, design ergonômico e ajustável, monitores 17&#x27;&#x27; a 34&#x27;&#x27;, preto" data-vk="21ee7b0f31b67a83">
         <span class="badge">-49%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">ELG, F410, Suporte Articulado de Parede, Pistão a Gás, Design Ergonômico e Ajustável, Monitores 17&#x27;&#x27; a 34&#x27;&#x27;, Preto</span>
         <span class="precos"><span class="preco">R$ 177,00</span><span class="antigo">R$ 349,90</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0DH9L38ZM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="buba, máquina fotográfica com projetor">
+      <a class="card" href="https://www.amazon.com.br/dp/B0DH9L38ZM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="buba, máquina fotográfica com projetor" data-vk="f1f37c9aabc7074a">
         <span class="badge">-49%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Buba, Máquina Fotográfica Com Projetor</span>
         <span class="precos"><span class="preco">R$ 71,97</span><span class="antigo">R$ 141,90</span><span class="aval">⭐ 5.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0FFPJ9HC7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="secador super ionic chumbo - 1.700w motor bldc 3 temperaturas jato frio 110v">
+      <a class="card" href="https://www.amazon.com.br/dp/B0FFPJ9HC7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="secador super ionic chumbo - 1.700w motor bldc 3 temperaturas jato frio 110v" data-vk="5fc9c4d2d35a7080">
         <span class="badge">-49%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Secador Super Ionic Chumbo - 1.700W Motor BLDC 3 Temperaturas Jato Frio 110V</span>
         <span class="precos"><span class="preco">R$ 182,40</span><span class="antigo">R$ 359,00</span><span class="aval">⭐ 4.3</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BYKXC74H?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="toyster - animais da selva - quebra-cabeça - 3, 4 e 5 peças - maderá">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BYKXC74H?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="toyster - animais da selva - quebra-cabeça - 3, 4 e 5 peças - maderá" data-vk="e90a9b15f22e1238">
         <span class="badge">-49%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Toyster - Animais da Selva - Quebra-Cabeça - 3, 4 e 5 peças - Maderá</span>
         <span class="precos"><span class="preco">R$ 27,93</span><span class="antigo">R$ 54,90</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CYVDFY9Q?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="f. pão de ló 2 super alta 32cmx22cmx8,5cm">
+      <a class="card" href="https://www.amazon.com.br/dp/B0CYVDFY9Q?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="f. pão de ló 2 super alta 32cmx22cmx8,5cm" data-vk="18f4705477fcf0cc">
         <span class="badge">-49%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">F. PÃO DE LÓ 2 SUPER ALTA 32cmx22cmx8,5cm</span>
         <span class="precos"><span class="preco">R$ 81,43</span><span class="antigo">R$ 159,00</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0F63Z2LG8?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="carregador ec 20 power 45w gan preto intelbras">
+      <a class="card" href="https://www.amazon.com.br/dp/B0F63Z2LG8?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="carregador ec 20 power 45w gan preto intelbras" data-vk="e40094396c28f0f8">
         <span class="badge">-48%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Carregador EC 20 POWER 45W GAN Preto Intelbras</span>
         <span class="precos"><span class="preco">R$ 129,58</span><span class="antigo">R$ 249,00</span><span class="aval">⭐ 5.0</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0DPXSHRL6?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="euro home - descanso para utensilios silicone - sil2970-az">
+      <a class="card" href="https://www.amazon.com.br/dp/B0DPXSHRL6?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="euro home - descanso para utensilios silicone - sil2970-az" data-vk="91733e22d61b6bc2">
         <span class="badge">-48%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Euro Home - Descanso Para Utensilios Silicone - SIL2970-AZ</span>
         <span class="precos"><span class="preco">R$ 12,34</span><span class="antigo">R$ 23,70</span><span class="aval">⭐ 4.4</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/8532303390?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="atrás das câmeras: relações entre cultura, estado e televisão: 29">
+      <a class="card" href="https://www.amazon.com.br/dp/8532303390?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="atrás das câmeras: relações entre cultura, estado e televisão: 29" data-vk="3276b2e74e547e2a">
         <span class="badge">-48%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Atrás das câmeras: relações entre cultura, estado e televisão: 29</span>
         <span class="precos"><span class="preco">R$ 24,54</span><span class="antigo">R$ 47,10</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B09WG1KKHP?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="oxo colher de aranha de aço inoxidável good grips, preto">
+      <a class="card" href="https://www.amazon.com.br/dp/B09WG1KKHP?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="oxo colher de aranha de aço inoxidável good grips, preto" data-vk="f97ae5c4eae656e7">
         <span class="badge">-48%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">OXO Colher de aranha de aço inoxidável Good Grips, preto</span>
         <span class="precos"><span class="preco">R$ 164,98</span><span class="antigo">R$ 314,80</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B076X7VHWN?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="brinquedo para bebe dino papa tudo com acessórios, elka, multicor">
+      <a class="card" href="https://www.amazon.com.br/dp/B076X7VHWN?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="brinquedo para bebe dino papa tudo com acessórios, elka, multicor" data-vk="beedfea6a2757dcd">
         <span class="badge">-47%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Brinquedo para Bebe Dino Papa Tudo com Acessórios, Elka, Multicor</span>
         <span class="precos"><span class="preco">R$ 48,90</span><span class="antigo">R$ 92,99</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0F63L9DLK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="secador de cabelos philco 4 em 1 dobrável motor bldc psc3500 220v">
+      <a class="card" href="https://www.amazon.com.br/dp/B0F63L9DLK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="secador de cabelos philco 4 em 1 dobrável motor bldc psc3500 220v" data-vk="d2038dd161229d76">
         <span class="badge">-47%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Secador de Cabelos Philco 4 em 1 Dobrável Motor BLDC PSC3500 220V</span>
         <span class="precos"><span class="preco">R$ 420,82</span><span class="antigo">R$ 796,98</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B076MDW6XY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="tramontina enxadinha, cabo de madeira 60 cm">
+      <a class="card" href="https://www.amazon.com.br/dp/B076MDW6XY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="tramontina enxadinha, cabo de madeira 60 cm" data-vk="fcccfd33436c168f">
         <span class="badge">-47%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Tramontina Enxadinha, Cabo De Madeira 60 Cm</span>
         <span class="precos"><span class="preco">R$ 12,11</span><span class="antigo">R$ 22,90</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BTQXKGPK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ventilador de coluna mallory max control com controle remoto 140w, silencioso, com hélice de15 pás, grade especial em sistema ts, máxima vazão e mínimo ruído - pr-gr - 220v">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BTQXKGPK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ventilador de coluna mallory max control com controle remoto 140w, silencioso, com hélice de15 pás, grade especial em sistema ts, máxima vazão e mínimo ruído - pr-gr - 220v" data-vk="4c1a5e1503d8d0e6">
         <span class="badge">-47%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Ventilador de Coluna Mallory Max Control Com Controle Remoto 140W, Silencioso, Com Hélice de15 pás, Grade Especial em Sistema TS, Máxima Vazão e Mínimo Ruído - PR-GR - 220V</span>
         <span class="precos"><span class="preco">R$ 249,00</span><span class="antigo">R$ 469,99</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BLZM523W?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="camiseta mm regular gola v hering masculino">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BLZM523W?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="camiseta mm regular gola v hering masculino" data-vk="9887166de34bdf9c">
         <span class="badge">-47%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Camiseta MM Regular gola V Hering Masculino</span>
         <span class="precos"><span class="preco">R$ 79,99</span><span class="antigo">R$ 149,90</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CHH2RQ6J?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="sunny, patrulha canina, pelúcia da liberty, 25 cm">
+      <a class="card" href="https://www.amazon.com.br/dp/B0CHH2RQ6J?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="sunny, patrulha canina, pelúcia da liberty, 25 cm" data-vk="a05305d67284ddc3">
         <span class="badge">-46%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">SUNNY, Patrulha Canina, Pelúcia da Liberty, 25 cm</span>
         <span class="precos"><span class="preco">R$ 74,90</span><span class="antigo">R$ 139,99</span><span class="aval">⭐ 4.9</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0C3FND7Q3?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="widi care máscara de tratamento nutrição juba butter oil 500g">
+      <a class="card" href="https://www.amazon.com.br/dp/B0C3FND7Q3?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="widi care máscara de tratamento nutrição juba butter oil 500g" data-vk="00130f7f6494f3de">
         <span class="badge">-46%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Widi Care Máscara de Tratamento Nutrição Juba Butter Oil 500g</span>
         <span class="precos"><span class="preco">R$ 47,43</span><span class="antigo">R$ 88,02</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B08Y561R4Y?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ou organizador de armários 1,9l transparente linha clear">
+      <a class="card" href="https://www.amazon.com.br/dp/B08Y561R4Y?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ou organizador de armários 1,9l transparente linha clear" data-vk="123eebe50bf4c8aa">
         <span class="badge">-46%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Ou Organizador de Armários 1,9L Transparente Linha Clear</span>
         <span class="precos"><span class="preco">R$ 24,11</span><span class="antigo">R$ 44,64</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0783QWRD1?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="mop fit giratório com 2 refis microfibra, balde com 8 litros, mop5010, flash limp">
+      <a class="card" href="https://www.amazon.com.br/dp/B0783QWRD1?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="mop fit giratório com 2 refis microfibra, balde com 8 litros, mop5010, flash limp" data-vk="1a96f317df07f399">
         <span class="badge">-46%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Mop FIT Giratório com 2 refis microfibra, balde com 8 litros, MOP5010, Flash Limp</span>
         <span class="precos"><span class="preco">R$ 78,90</span><span class="antigo">R$ 145,88</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0DHLFGNMM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lego speed champions carro de corrida oracle red bull racing rb20 f1® 77243">
+      <a class="card" href="https://www.amazon.com.br/dp/B0DHLFGNMM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lego speed champions carro de corrida oracle red bull racing rb20 f1® 77243" data-vk="d3e4aedb4034a99e">
         <span class="badge">-46%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">LEGO Speed Champions Carro de Corrida Oracle Red Bull Racing RB20 F1® 77243</span>
         <span class="precos"><span class="preco">R$ 135,71</span><span class="antigo">R$ 249,99</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B00I7PK3GQ?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lancôme perfume feminino la vie est belle eau de parfum - fragrância floral gourmand inebriante com íris nobre e baunilha, aroma de felicidade e feminilidade">
+      <a class="card" href="https://www.amazon.com.br/dp/B00I7PK3GQ?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lancôme perfume feminino la vie est belle eau de parfum - fragrância floral gourmand inebriante com íris nobre e baunilha, aroma de felicidade e feminilidade" data-vk="a61da565e83284ea">
         <span class="badge">-45%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Lancôme Perfume Feminino La Vie Est Belle Eau de Parfum - Fragrância Floral Gourmand Inebriante com Íris Nobre e Baunilha, Aroma de Felicidade e Feminilidade</span>
         <span class="precos"><span class="preco">R$ 599,99</span><span class="antigo">R$ 1.099,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B017WWSY5Q?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="polo blue ralph lauren - perfume masculino - eau de parfum 125ml">
+      <a class="card" href="https://www.amazon.com.br/dp/B017WWSY5Q?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="polo blue ralph lauren - perfume masculino - eau de parfum 125ml" data-vk="00e7c52e814f5f9b">
         <span class="badge">-45%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Polo Blue Ralph Lauren - Perfume Masculino - Eau de Parfum 125ml</span>
         <span class="precos"><span class="preco">R$ 494,00</span><span class="antigo">R$ 899,00</span><span class="aval">⭐ 4.5</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0D79LYWG7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ga.ma italy modelador de ondas com regulagem 4 alturas x-waves keration bivolt">
+      <a class="card" href="https://www.amazon.com.br/dp/B0D79LYWG7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="ga.ma italy modelador de ondas com regulagem 4 alturas x-waves keration bivolt" data-vk="947a059588677325">
         <span class="badge">-45%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">GA.MA ITALY Modelador de Ondas Com Regulagem 4 Alturas X-Waves Keration Bivolt</span>
         <span class="precos"><span class="preco">R$ 197,91</span><span class="antigo">R$ 359,90</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0BPJJ6GHW?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="roupa de atletismo short justo run estilo do corpofeminino">
+      <a class="card" href="https://www.amazon.com.br/dp/B0BPJJ6GHW?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="roupa de atletismo short justo run estilo do corpofeminino" data-vk="d56af0f8bc7c499d">
         <span class="badge">-45%</span>
         <span class="loja amz">Amazon</span>
         <span class="titulo">Roupa de atletismo Short Justo Run Estilo do CorpoFeminino</span>
         <span class="precos"><span class="preco">R$ 48,10</span><span class="antigo">R$ 86,99</span><span class="aval">⭐ 4.2</span></span>
+        <span class="views" hidden></span>
       </a>
     </div>
     <p id="vazio" class="vazio" hidden>Nenhum produto encontrado. 🤔</p>
 
     <footer>
       Como afiliado do Mercado Livre e da Amazon, posso receber comissão pelas compras qualificadas.<br>
-      Preços sujeitos a alteração. Atualizado em 20/07/2026 às 12:37.
+      Preços sujeitos a alteração. Atualizado em 20/07/2026 às 13:00.
     </footer>
+  </div>
+  <div id="online" class="online-badge" hidden>
+    <span class="dot"></span><span><b id="online-num">–</b> pessoas online</span>
   </div>
 <script>
 
@@ -878,6 +1021,62 @@
   }
   busca.addEventListener('input', aplicar);
   aplicar();
+
+  // =====================================================================
+  // CONTADORES REAIS via Abacus (contador gratuito, sem cadastro, com CORS).
+  // Se o servico nao responder, nada quebra: os numeros so nao aparecem.
+  // =====================================================================
+  const NS = 'achadinhospromocoes';                 // namespace fixo no Abacus
+  const API = 'https://abacus.jasoncameron.dev';
+  const pegar = (u) => fetch(u, {cache: 'no-store'})
+    .then(r => r.ok ? r.json() : null).catch(() => null);
+  // Abacus responde {value:N}; toleramos {count:N} por seguranca.
+  const valor = (d) => d && (typeof d.value === 'number' ? d.value
+                          : (typeof d.count === 'number' ? d.count : null));
+
+  // ---- Views por card: incrementa 1x por sessao ao aparecer na tela ----
+  const io = new IntersectionObserver((ents) => {
+    for (const e of ents) {
+      if (!e.isIntersecting) continue;
+      const card = e.target;
+      io.unobserve(card);
+      const vk = card.dataset.vk;
+      if (!vk) continue;
+      const flag = 'vk_' + vk;
+      const primeira = !sessionStorage.getItem(flag);   // 1 view por sessao
+      const url = API + (primeira ? '/hit/' : '/get/') + NS + '/v-' + vk;
+      pegar(url).then((d) => {
+        const v = valor(d);
+        if (v === null) return;
+        if (primeira) sessionStorage.setItem(flag, '1');
+        const el = card.querySelector('.views');
+        if (el) {
+          el.textContent = '👁 ' + v.toLocaleString('pt-BR') + ' pessoas viram';
+          el.hidden = false;
+        }
+      });
+    }
+  }, {rootMargin: '150px'});
+  for (const c of cards) io.observe(c);
+
+  // ---- Pessoas online: janelas de 30s. Cada visitante da 1 hit por janela;
+  //      o total da janela ~ nº de pessoas ativas naquele momento (real, aprox.) ----
+  const badge = document.getElementById('online');
+  const onlineNum = document.getElementById('online-num');
+  const JANELA = 30;                                  // segundos por janela
+  const janela = (atras) => Math.floor(Date.now() / 1000 / JANELA) - atras;
+
+  async function baterOnline() {
+    const cur = await pegar(API + '/hit/' + NS + '/online-' + janela(0));
+    const prev = await pegar(API + '/get/' + NS + '/online-' + janela(1));
+    const vals = [valor(cur), valor(prev)].filter(v => v !== null);
+    if (!vals.length) return;                          // servico fora -> nao mostra nada falso
+    const n = Math.max(1, ...vals);                    // no minimo 1 (voce)
+    onlineNum.textContent = n.toLocaleString('pt-BR');
+    badge.hidden = false;
+  }
+  baterOnline();
+  setInterval(baterOnline, JANELA * 1000);
 
 </script>
 </body>
