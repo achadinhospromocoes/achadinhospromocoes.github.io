@@ -25,10 +25,9 @@
   .wrap { max-width:620px; margin:0 auto; }
   header { text-align:center; margin-bottom:28px; }
   .avatar {
-    width:92px; height:92px; border-radius:50%; margin:0 auto 14px;
-    background:linear-gradient(135deg,var(--acc),#f97316);
-    display:flex; align-items:center; justify-content:center;
-    font-size:44px; box-shadow:0 8px 24px rgba(0,0,0,.25);
+    width:130px; height:130px; border-radius:50%; margin:0 auto 14px;
+    display:block; object-fit:cover;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
   }
   h1 { font-size:1.5rem; margin-bottom:6px; }
   .bio { color:var(--muted); font-size:.98rem; max-width:420px; margin:0 auto; }
@@ -118,7 +117,8 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="avatar">🛒</div>
+      <img class="avatar" src="logo.png" alt="Achadinhos Promoções">
+
       <h1>Achadinhos Promoções</h1>
       <p class="bio">As melhores promoções do Mercado Livre e da Amazon, garimpadas todo dia 🔎🔥</p>
     </header>
@@ -572,6 +572,13 @@
         <span class="precos"><span class="preco">R$ 19,50</span><span class="antigo">R$ 47,70</span><span class="aval">⭐ 4.5</span></span>
         <span class="views" hidden></span>
       </a>
+      <a class="card" href="https://www.amazon.com.br/dp/B07G33XZP8?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="shampoo l&#x27;oréal paris elseve hydra-detox anti-caspa, 400ml" data-vk="2f205e827591df3a">
+        <span class="badge">-58%</span>
+        <span class="loja amz">Amazon</span>
+        <span class="titulo">Shampoo L&#x27;Oréal Paris Elseve Hydra-Detox Anti-Caspa, 400ml</span>
+        <span class="precos"><span class="preco">R$ 24,99</span><span class="antigo">R$ 59,56</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
+      </a>
       <a class="card" href="https://www.amazon.com.br/dp/B0CJX7NQK9?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="suporte filtro café plástico 6x9x10cm transparente" data-vk="e891ed06f1a8f893">
         <span class="badge">-58%</span>
         <span class="loja amz">Amazon</span>
@@ -584,13 +591,6 @@
         <span class="loja amz">Amazon</span>
         <span class="titulo">Caneta, Faber-Castell, MT/ESZF, Multicor, pacote de 4</span>
         <span class="precos"><span class="preco">R$ 8,90</span><span class="antigo">R$ 21,04</span><span class="aval">⭐ 4.9</span></span>
-        <span class="views" hidden></span>
-      </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B07FYPC9YY?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="bola de pilates overball - 25cm - azul" data-vk="ee9d52656808c954">
-        <span class="badge">-58%</span>
-        <span class="loja amz">Amazon</span>
-        <span class="titulo">Bola de Pilates Overball - 25cm - Azul</span>
-        <span class="precos"><span class="preco">R$ 39,90</span><span class="antigo">R$ 93,90</span><span class="aval">⭐ 4.7</span></span>
         <span class="views" hidden></span>
       </a>
       <a class="card" href="https://www.amazon.com.br/dp/B0BL3X48RW?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="baby alive, boneca, star besties, bright bella - tema espacial, brinquedo interativo, 20 cm - a partir de 3 anos" data-vk="df1c33dfbc4cb283">
@@ -663,13 +663,6 @@
         <span class="precos"><span class="preco">R$ 549,00</span><span class="antigo">R$ 1.199,90</span><span class="aval">⭐ 4.7</span></span>
         <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B0CP2Y5898?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lyor - porta retrato de metal dourado 10cm x 15cm" data-vk="771e45dccb34a0a5">
-        <span class="badge">-54%</span>
-        <span class="loja amz">Amazon</span>
-        <span class="titulo">LYOR - Porta Retrato de Metal Dourado 10cm x 15cm</span>
-        <span class="precos"><span class="preco">R$ 55,50</span><span class="antigo">R$ 119,99</span><span class="aval">⭐ 4.4</span></span>
-        <span class="views" hidden></span>
-      </a>
       <a class="card" href="https://www.amazon.com.br/dp/B0BG96522V?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="maleta artistica barbie 42 pcs" data-vk="9429e6dea9ffb018">
         <span class="badge">-54%</span>
         <span class="loja amz">Amazon</span>
@@ -717,6 +710,13 @@
         <span class="loja amz">Amazon</span>
         <span class="titulo">Cartucho HP 662 Colorido Original (CZ104AB) Para Impressora DeskJet 2516, 3516, 3546, 2546,1516, 4646, 2646</span>
         <span class="precos"><span class="preco">R$ 89,90</span><span class="antigo">R$ 189,99</span><span class="aval">⭐ 4.7</span></span>
+        <span class="views" hidden></span>
+      </a>
+      <a class="card" href="https://www.amazon.com.br/dp/B0DQ6CJ3B7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lyor - conjunto 3 peças tábua com descascador e faca com protetor em aço inox e plástico cinza" data-vk="2c1b62b669e6a1f9">
+        <span class="badge">-53%</span>
+        <span class="loja amz">Amazon</span>
+        <span class="titulo">LYOR - Conjunto 3 Peças Tábua com Descascador e Faca com Protetor em Aço Inox e Plástico Cinza</span>
+        <span class="precos"><span class="preco">R$ 24,90</span><span class="antigo">R$ 52,57</span><span class="aval">⭐ 5.0</span></span>
         <span class="views" hidden></span>
       </a>
       <a class="card" href="https://www.amazon.com.br/dp/B0DP7R16J7?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="marvel, action figure, capitão américa, admirável mundo novo - figura articulada com 30 cm - a partir de 4 anos" data-vk="633aacedfe19387d">
@@ -780,13 +780,6 @@
         <span class="loja amz">Amazon</span>
         <span class="titulo">Milagre Creme para Pentear 450g , Lola Cosmetics</span>
         <span class="precos"><span class="preco">R$ 34,82</span><span class="antigo">R$ 71,80</span><span class="aval">⭐ 4.6</span></span>
-        <span class="views" hidden></span>
-      </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B076X5R492?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="luminária de mesa, preto, 15w, taschibra" data-vk="ce798ec68f3e237c">
-        <span class="badge">-51%</span>
-        <span class="loja amz">Amazon</span>
-        <span class="titulo">Luminária de Mesa, Preto, 15W, Taschibra</span>
-        <span class="precos"><span class="preco">R$ 75,90</span><span class="antigo">R$ 154,23</span><span class="aval">⭐ 4.7</span></span>
         <span class="views" hidden></span>
       </a>
       <a class="card" href="https://www.amazon.com.br/dp/B09XJ8YZHK?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="fun, disney pelúcias stitch 20cm" data-vk="2d4db7f4cbc63942">
@@ -880,13 +873,6 @@
         <span class="precos"><span class="preco">R$ 36,99</span><span class="antigo">R$ 71,55</span><span class="aval">⭐ 4.1</span></span>
         <span class="views" hidden></span>
       </a>
-      <a class="card" href="https://www.amazon.com.br/dp/B08156YS5W?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="jogo de utensílios com suporte mogno" data-vk="78b05b1bd45d2f4c">
-        <span class="badge">-48%</span>
-        <span class="loja amz">Amazon</span>
-        <span class="titulo">Jogo de Utensílios com Suporte Mogno</span>
-        <span class="precos"><span class="preco">R$ 20,75</span><span class="antigo">R$ 39,90</span><span class="aval">⭐ 4.4</span></span>
-        <span class="views" hidden></span>
-      </a>
       <a class="card" href="https://www.amazon.com.br/dp/8532303390?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="atrás das câmeras: relações entre cultura, estado e televisão: 29" data-vk="3276b2e74e547e2a">
         <span class="badge">-48%</span>
         <span class="loja amz">Amazon</span>
@@ -978,12 +964,26 @@
         <span class="precos"><span class="preco">R$ 24,11</span><span class="antigo">R$ 44,64</span><span class="aval">⭐ 4.8</span></span>
         <span class="views" hidden></span>
       </a>
+      <a class="card" href="https://www.amazon.com.br/dp/B0DHLFGNMM?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lego speed champions carro de corrida oracle red bull racing rb20 f1 77243" data-vk="d3e4aedb4034a99e">
+        <span class="badge">-46%</span>
+        <span class="loja amz">Amazon</span>
+        <span class="titulo">LEGO Speed Champions Carro de Corrida Oracle Red Bull Racing RB20 F1 77243</span>
+        <span class="precos"><span class="preco">R$ 135,71</span><span class="antigo">R$ 249,99</span><span class="aval">⭐ 4.8</span></span>
+        <span class="views" hidden></span>
+      </a>
+      <a class="card" href="https://www.amazon.com.br/dp/B00I7PK3GQ?tag=achadinhosdarede-20&amp;linkCode=ogi&amp;th=1&amp;psc=1" target="_blank" rel="noopener sponsored" data-loja="amz" data-busca="lancôme perfume feminino la vie est belle eau de parfum - fragrância floral gourmand inebriante com íris nobre e baunilha, aroma de felicidade e feminilidade" data-vk="a61da565e83284ea">
+        <span class="badge">-45%</span>
+        <span class="loja amz">Amazon</span>
+        <span class="titulo">Lancôme Perfume Feminino La Vie Est Belle Eau de Parfum - Fragrância Floral Gourmand Inebriante com Íris Nobre e Baunilha, Aroma de Felicidade e Feminilidade</span>
+        <span class="precos"><span class="preco">R$ 599,99</span><span class="antigo">R$ 1.099,00</span><span class="aval">⭐ 4.6</span></span>
+        <span class="views" hidden></span>
+      </a>
     </div>
     <p id="vazio" class="vazio" hidden>Nenhum produto encontrado. 🤔</p>
 
     <footer>
       Como afiliado do Mercado Livre e da Amazon, posso receber comissão pelas compras qualificadas.<br>
-      Preços sujeitos a alteração. Atualizado em 21/07/2026 às 10:04.
+      Preços sujeitos a alteração. Atualizado em 21/07/2026 às 10:49.
     </footer>
   </div>
   <div id="online" class="online-badge" hidden>
