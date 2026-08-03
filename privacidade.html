@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade | Achadinhos Promoções</title>
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://ihachei.com.br/privacidade.html">
+<link rel="icon" type="image/png" href="logo-96.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<style>
+
+/* A paleta sai do logo: verde da marca + ouro das etiquetas de desconto.
+   Antes o site era azul/roxo — bonito, mas de outra marca. --acc (ouro) manda
+   nos preços e no que precisa gritar; --acc2 (verde) é a identidade. */
+:root {
+  --bg: #060b09;
+  --bg-alt: #0b1512;
+  --superficie: rgba(255,255,255,.045);
+  --superficie-forte: rgba(255,255,255,.078);
+  --borda: rgba(255,255,255,.09);
+  --borda-forte: rgba(255,255,255,.17);
+  --txt: #ecf3ee;
+  --muted: #93a89c;
+  --acc: #ffc93c;
+  --acc2: #22c55e;
+  --acc2-escuro: #15803d;
+  --tinta: #06140e;          /* texto por cima dos preenchimentos de destaque */
+  --ok: #34d399;
+  --ml: #ffe600;
+  --amz: #ff9900;
+  --sombra: 0 18px 40px -22px rgba(0,0,0,.85);
+  --sombra-marca: 0 20px 45px -20px rgba(34,197,94,.55);
+  --raio: 18px;
+}
+:root[data-tema="claro"] {
+  --bg: #f5f8f5;
+  --bg-alt: #e9f2eb;
+  --superficie: #ffffff;
+  --superficie-forte: #eef5f0;
+  --borda: rgba(6,32,20,.10);
+  --borda-forte: rgba(6,32,20,.20);
+  --txt: #0c1a14;
+  --muted: #5a6f63;
+  /* No claro o ouro some no branco: os mesmos papéis viram âmbar escuro e
+     verde-floresta, que passam no contraste sem trocar a identidade. */
+  --acc: #a35a08;
+  --acc2: #15803d;
+  --acc2-escuro: #14532d;
+  --tinta: #ffffff;
+  --ok: #15803d;
+  --sombra: 0 16px 34px -24px rgba(6,45,28,.45);
+  --sombra-marca: 0 18px 40px -24px rgba(21,128,61,.45);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+  min-height: 100vh;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv11", "ss01";
+}
+/* Brilhos de fundo: ficam presos na viewport para não esticar a página
+   inteira (que agora tem milhares de cards) num gradiente gigante. */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(70rem 40rem at 10% -10%, rgba(34,197,94,.26), transparent 62%),
+    radial-gradient(55rem 34rem at 92% 2%, rgba(255,201,60,.16), transparent 64%),
+    linear-gradient(180deg, var(--bg-alt), var(--bg) 46%);
+}
+:root[data-tema="claro"] body::before {
+  background:
+    radial-gradient(70rem 40rem at 10% -10%, rgba(34,197,94,.20), transparent 62%),
+    radial-gradient(55rem 34rem at 92% 2%, rgba(250,204,21,.20), transparent 64%),
+    linear-gradient(180deg, var(--bg-alt), var(--bg) 46%);
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font-family: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--acc2); outline-offset: 2px; border-radius: 6px; }
+
+.wrap { max-width: 1360px; margin: 0 auto; padding: 0 18px; }
+
+/* ---------------- topo fixo ---------------- */
+.topo {
+  position: sticky; top: 0; z-index: 40;
+  backdrop-filter: blur(16px) saturate(140%);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  border-bottom: 1px solid var(--borda);
+}
+/* Fio da marca no topo: 2px de verde→ouro que amarram o cabeçalho ao logo. */
+.topo::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--acc2) 22%, var(--acc) 55%, var(--acc2) 78%, transparent);
+  opacity: .8;
+}
+.topo-in {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 0; max-width: 1360px; margin: 0 auto; padding-inline: 18px;
+}
+.logo { display: flex; align-items: center; gap: 11px; flex: none; }
+.logo-mark {
+  width: 40px; height: 40px; border-radius: 50%; flex: none; display: block;
+  object-fit: cover; background: #fff;
+  border: 1.5px solid color-mix(in srgb, var(--acc2) 55%, transparent);
+  box-shadow: 0 6px 18px -8px rgba(34,197,94,.75);
+}
+.logo-emo {
+  width: 40px; height: 40px; border-radius: 50%; flex: none;
+  display: grid; place-items: center; font-size: 1.1rem;
+  background: linear-gradient(135deg, var(--acc2), var(--acc));
+  color: var(--tinta); box-shadow: 0 6px 18px -8px var(--acc2);
+}
+.logo-txt { display: flex; flex-direction: column; line-height: 1.05; }
+/* A assinatura ("ihachei") vem do próprio logo: repetir aqui em caixa alta e
+   miúda hierarquiza — marca-mãe em cima, nome do site embaixo. */
+.logo-txt .assinatura {
+  font-size: .58rem; font-weight: 700; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--acc2);
+}
+.logo-txt .nome {
+  font-size: .96rem; font-weight: 800; letter-spacing: -.3px; white-space: nowrap;
+}
+.topo .busca-wrap { flex: 1; min-width: 0; }
+.icone-btn {
+  width: 38px; height: 38px; flex: none; border-radius: 12px; cursor: pointer;
+  border: 1px solid var(--borda); background: var(--superficie);
+  display: grid; place-items: center; font-size: 1rem;
+  transition: background .15s, border-color .15s, transform .15s;
+}
+.icone-btn:hover { background: var(--superficie-forte); border-color: var(--borda-forte); transform: translateY(-1px); }
+
+/* ---------------- busca ---------------- */
+.busca-wrap { position: relative; }
+.busca {
+  width: 100%; padding: 11px 38px 11px 40px; border-radius: 13px; font-size: .93rem;
+  background: var(--superficie); color: var(--txt);
+  border: 1px solid var(--borda); outline: none;
+  transition: border-color .15s, background .15s;
+}
+.busca:focus {
+  border-color: var(--acc2); background: var(--superficie-forte);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--acc2) 18%, transparent);
+}
+.busca::placeholder { color: var(--muted); }
+.busca-ico, .busca-x {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  color: var(--muted); font-size: .95rem; pointer-events: none;
+}
+.busca-ico { left: 14px; }
+.busca-x {
+  right: 8px; pointer-events: auto; cursor: pointer;
+  background: none; border: none; padding: 4px 8px; border-radius: 8px; line-height: 1;
+}
+.busca-x:hover { color: var(--txt); background: var(--superficie-forte); }
+
+/* ---------------- hero ---------------- */
+.hero { text-align: center; padding: 40px 0 26px; }
+
+/* O logo é redondo, então o herói é redondo: um anel cônico verde→ouro girando
+   devagar em volta da arte. É o único movimento contínuo da página — some
+   inteiro em prefers-reduced-motion, junto com o resto das animações. */
+.marca-hero { position: relative; width: 148px; height: 148px; margin: 0 auto 18px; }
+.marca-hero::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--acc2), var(--acc), var(--acc2-escuro), var(--acc2));
+  animation: girar 9s linear infinite;
+}
+.marca-hero::after {
+  content: ""; position: absolute; inset: -18px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,197,94,.30), transparent 68%);
+  filter: blur(10px); z-index: -1;
+}
+/* width/height explicitos (e nao "inset: 5px" sozinho): num <img> absoluto o
+   width:auto vale a largura INTRINSECA do arquivo, entao o 256px do logo
+   vazava do anel e cobria o titulo. */
+.avatar, .avatar-fb {
+  position: absolute; top: 4px; left: 4px;
+  width: calc(100% - 8px); height: calc(100% - 8px);
+  border-radius: 50%; display: block;
+  object-fit: cover; background: var(--bg-alt);
+  /* A borda na cor do fundo abre um vao entre o anel e a arte: sem ela o verde
+     do anel encosta no verde do logo e os dois viram uma mancha so. */
+  border: 4px solid var(--bg);
+  box-shadow: var(--sombra-marca);
+}
+.avatar-fb { display: grid; place-items: center; font-size: 3.4rem;
+  background: linear-gradient(135deg, var(--acc2), var(--acc)); }
+
+/* Selo de credibilidade logo acima do nome: diz o que o site faz antes de
+   qualquer oferta aparecer. */
+.selo {
+  display: inline-flex; align-items: center; gap: 7px; margin-bottom: 14px;
+  padding: 6px 15px; border-radius: 999px;
+  font-size: .74rem; font-weight: 700; letter-spacing: .3px;
+  color: var(--acc2);
+  background: color-mix(in srgb, var(--acc2) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--acc2) 40%, transparent);
+}
+.selo .pulso {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--acc2);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--acc2) 70%, transparent);
+  animation: pulsar 2.4s ease-out infinite;
+}
+@keyframes pulsar {
+  70% { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+/* Fora da tela, mas ainda lido por buscador e leitor de tela. clip-path sozinho
+   nao basta em navegador antigo, dai o par com o clip depreciado. */
+.so-leitor {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; white-space: nowrap; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+}
+/* Sem o titulo, a bio virou o primeiro texto do herói: cresce um pouco e ganha
+   o tom cheio (era --muted, de legenda) para nao ficar orfa embaixo do logo. */
+.hero .bio {
+  color: var(--txt); opacity: .82; max-width: 560px; margin: 4px auto 0;
+  font-size: 1.06rem; font-weight: 500; line-height: 1.5;
+}
+
+.stats {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 26px;
+}
+.stat {
+  position: relative; overflow: hidden;
+  min-width: 128px; padding: 14px 20px; border-radius: 16px;
+  background: var(--superficie); border: 1px solid var(--borda);
+  transition: transform .16s, border-color .16s;
+}
+/* Fiozinho da marca no topo de cada número: dá acabamento sem pesar. */
+.stat::before {
+  content: ""; position: absolute; top: 0; left: 18%; right: 18%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--acc2), transparent);
+}
+.stat:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--acc2) 45%, transparent); }
+.stat b {
+  display: block; font-size: 1.42rem; font-weight: 900; letter-spacing: -.6px;
+  font-variant-numeric: tabular-nums; color: var(--acc);
+}
+.stat span { font-size: .68rem; text-transform: uppercase; letter-spacing: .9px; color: var(--muted); font-weight: 600; }
+
+.redes { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 20px; }
+.rede {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 17px; border-radius: 999px; font-weight: 600; font-size: .87rem;
+  background: var(--superficie); border: 1px solid var(--borda);
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.rede:hover {
+  transform: translateY(-2px); border-color: var(--acc2);
+  background: color-mix(in srgb, var(--acc2) 12%, var(--superficie));
+}
+
+/* ---------------- layout ---------------- */
+.conteudo {
+  display: grid; grid-template-columns: 264px minmax(0, 1fr); gap: 24px;
+  align-items: start; padding-bottom: 60px;
+}
+.filtros {
+  position: sticky; top: 74px;
+  max-height: calc(100vh - 92px); overflow-y: auto; overscroll-behavior: contain;
+  background: var(--superficie); border: 1px solid var(--borda);
+  border-radius: var(--raio); padding: 16px 14px;
+  box-shadow: var(--sombra);
+  scrollbar-width: thin;
+}
+.filtros::-webkit-scrollbar { width: 7px; }
+.filtros::-webkit-scrollbar-thumb { background: var(--borda-forte); border-radius: 9px; }
+.grupo + .grupo { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--borda); }
+.grupo h2 {
+  font-size: .68rem; text-transform: uppercase; letter-spacing: .9px;
+  color: var(--muted); margin-bottom: 9px; padding-left: 4px; font-weight: 700;
+}
+.lista { display: flex; flex-direction: column; gap: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  width: 100%; text-align: left; background: none; border: none;
+  border-radius: 10px; padding: 8px 10px;
+  font-size: .86rem; font-weight: 500; cursor: pointer;
+  transition: background .13s, color .13s;
+}
+.chip:hover { background: var(--superficie-forte); }
+/* A categoria escolhida ganha uma barrinha verde na lateral: sem ela, a única
+   pista era a cor do texto — fraca demais numa lista de 30 e poucas linhas. */
+.chip.ativo {
+  color: var(--acc2); font-weight: 800;
+  background: color-mix(in srgb, var(--acc2) 13%, transparent);
+  box-shadow: inset 3px 0 0 var(--acc2);
+}
+.chip .emo { margin-right: 7px; }
+.chip .qtd { color: var(--muted); font-weight: 600; font-size: .72rem; flex: none; }
+.chip.ativo .qtd { color: var(--acc2); opacity: .85; }
+.chips .chip {
+  width: auto; border: 1px solid var(--borda); border-radius: 999px;
+  padding: 6px 13px; font-size: .8rem; font-weight: 600;
+}
+.chips .chip.ativo { background: var(--acc2); color: var(--tinta); border-color: var(--acc2); }
+
+.slider { width: 100%; accent-color: var(--acc2); margin-top: 4px; }
+.slider-val { display: flex; justify-content: space-between; font-size: .76rem; color: var(--muted); }
+.switch {
+  display: flex; align-items: center; gap: 9px; cursor: pointer;
+  padding: 8px 10px; border-radius: 10px; font-size: .86rem; font-weight: 500;
+}
+.switch:hover { background: var(--superficie-forte); }
+.switch input { accent-color: var(--acc2); width: 16px; height: 16px; cursor: pointer; }
+.limpar {
+  width: 100%; margin-top: 16px; padding: 10px; border-radius: 11px; cursor: pointer;
+  background: none; border: 1px dashed var(--borda-forte); color: var(--muted);
+  font-size: .82rem; font-weight: 600; transition: color .15s, border-color .15s;
+}
+.limpar:hover { color: var(--acc2); border-color: var(--acc2); }
+
+/* ---------------- barra da vitrine ---------------- */
+.barra {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 16px;
+}
+.barra h2 {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 1.06rem; font-weight: 800; letter-spacing: -.3px;
+}
+/* Barrinha vertical antes do título da vitrine — o mesmo verde do logo. */
+.barra h2::before {
+  content: ""; width: 4px; height: 1.05em; border-radius: 3px; flex: none;
+  background: linear-gradient(180deg, var(--acc2), var(--acc));
+}
+.barra .contador { color: var(--muted); font-size: .82rem; font-weight: 500; margin-left: 13px; }
+.ordem {
+  padding: 9px 13px; border-radius: 11px; font-size: .84rem; font-weight: 600; cursor: pointer;
+  background: var(--superficie); border: 1px solid var(--borda);
+}
+.ordem:focus { border-color: var(--acc2); outline: none; }
+.abrir-filtros { display: none; }
+
+.marcas { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+.marca-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 8px 5px 12px; border-radius: 999px; font-size: .78rem; font-weight: 600;
+  background: var(--superficie-forte); border: 1px solid var(--borda-forte);
+}
+.marca-tag button { background: none; border: none; cursor: pointer; color: var(--muted); font-size: .9rem; line-height: 1; }
+.marca-tag button:hover { color: var(--acc2); }
+
+/* ---------------- cards ---------------- */
+.grade {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
+}
+.card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--superficie); border: 1px solid var(--borda);
+  border-radius: var(--raio); overflow: hidden;
+  transition: transform .16s ease, border-color .16s, box-shadow .16s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--acc2) 42%, transparent);
+  box-shadow: var(--sombra), 0 0 0 1px color-mix(in srgb, var(--acc2) 18%, transparent);
+}
+.card-link { display: flex; flex-direction: column; height: 100%; }
+
+/* Sem imagem de produto nos feeds, a "capa" é uma faixa colorida derivada da
+   categoria (matiz fixo por índice) com o emoji dela em marca-d'água. Dá ritmo
+   visual à grade sem inventar imagem que não existe. */
+/* A cor da categoria entra BEM diluida: com milhares de cards lado a lado, o
+   mesmo gradiente em alfa alto virava um arco-iris que competia com o preco e
+   com o selo de desconto. Aqui ela so diferencia a faixa — quem grita e o
+   verde/ouro da marca. */
+.capa {
+  position: relative; height: 74px; flex: none;
+  background:
+    radial-gradient(120% 100% at 15% 0%, hsl(var(--h) 60% 55% / .17), transparent 72%),
+    linear-gradient(135deg, hsl(var(--h) 45% 45% / .12), transparent 85%);
+  border-bottom: 1px solid var(--borda);
+  /* o recuo da esquerda e o espaco do botao de favorito, que fica por cima da
+     capa: sem ele o coracao cobre o emoji da categoria no mobile (onde o botao
+     esta sempre visivel, nao so no hover). */
+  display: flex; align-items: center; padding: 0 12px 0 46px;
+}
+.capa-emo { font-size: 2.1rem; opacity: .5; filter: saturate(1.2); }
+.card:hover .capa-emo { opacity: .78; }
+.badge {
+  position: absolute; top: 10px; right: 10px;
+  background: linear-gradient(135deg, #15803d, #22c55e); color: #fff;
+  font-weight: 800; font-size: .78rem; padding: 4px 10px; border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 6px 16px -8px #22c55e;
+}
+.badge.quente { background: linear-gradient(135deg, #dc2626, #f97316); box-shadow: 0 6px 16px -8px #f97316; }
+/* Etiqueta da loja: as cores são as OFICIAIS (amarelo ML, laranja Amazon) e não
+   mudam com o tema — por isso a tinta é fixa e escura, e não var(--tinta), que
+   fica branca no claro e sumiria em cima do amarelo. */
+.loja {
+  position: absolute; left: 12px; bottom: -9px;
+  font-size: .61rem; font-weight: 800; padding: 3px 9px;
+  border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; color: #131a10;
+  box-shadow: 0 4px 10px -6px rgba(0,0,0,.7);
+}
+.loja.ml { background: var(--ml); }
+.loja.amz { background: var(--amz); }
+.corpo { display: flex; flex-direction: column; gap: 7px; padding: 18px 13px 13px; flex: 1; }
+.titulo {
+  font-size: .855rem; line-height: 1.34; font-weight: 600; margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.precos { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+.preco {
+  font-size: 1.2rem; font-weight: 900; letter-spacing: -.6px; color: var(--acc);
+  font-variant-numeric: tabular-nums;
+}
+.antigo { font-size: .78rem; color: var(--muted); text-decoration: line-through; }
+.economia { font-size: .73rem; font-weight: 700; color: var(--ok); }
+.meta { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; font-size: .73rem; color: var(--muted); }
+.meta .frete { color: var(--ok); font-weight: 700; }
+.views { font-size: .7rem; color: var(--muted); }
+.fav {
+  position: absolute; top: 8px; left: 8px; z-index: 3;
+  width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+  border: none; background: rgba(8,11,22,.45); backdrop-filter: blur(4px);
+  font-size: .85rem; line-height: 1; display: grid; place-items: center;
+  opacity: 0; transition: opacity .15s, transform .15s;
+}
+.card:hover .fav, .fav.on { opacity: 1; }
+.fav:hover { transform: scale(1.14); }
+
+/* ---------------- estados / rodapé ---------------- */
+.vazio { text-align: center; color: var(--muted); padding: 60px 20px; }
+.vazio b { display: block; font-size: 1.05rem; color: var(--txt); margin-bottom: 6px; }
+.mais { display: grid; place-items: center; padding: 30px 0 10px; }
+.mais button {
+  padding: 13px 32px; border-radius: 999px; cursor: pointer; font-weight: 800; font-size: .9rem;
+  background: linear-gradient(135deg, var(--acc2), var(--acc)); color: var(--tinta); border: none;
+  box-shadow: 0 14px 30px -14px var(--acc2); transition: transform .15s, box-shadow .15s;
+}
+.mais button:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -14px var(--acc2); }
+.fim { text-align: center; color: var(--muted); font-size: .8rem; padding: 26px 0; }
+
+.topo-btn {
+  position: fixed; right: 18px; bottom: 18px; z-index: 50;
+  width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.05rem;
+  background: var(--superficie-forte); border: 1px solid var(--borda-forte); color: var(--txt);
+  backdrop-filter: blur(10px); box-shadow: var(--sombra);
+  transition: transform .15s, opacity .2s;
+}
+.topo-btn:hover { transform: translateY(-3px); }
+
+footer {
+  border-top: 1px solid var(--borda); padding: 30px 0 38px;
+  text-align: center; color: var(--muted); font-size: .78rem; line-height: 1.7;
+}
+.rodape-logo {
+  width: 48px; height: 48px; border-radius: 50%; display: block; margin: 0 auto 14px;
+  opacity: .75; border: 1px solid var(--borda-forte); background: #fff;
+  transition: opacity .18s;
+}
+.rodape-logo:hover { opacity: 1; }
+.copyright { margin-top: 12px; font-weight: 600; letter-spacing: .3px; color: var(--txt); opacity: .8; }
+.legal { margin-top: 10px; font-size: .78rem; }
+.legal a { color: var(--acc2); text-decoration: underline; }
+.legal a:hover { opacity: .8; }
+
+/* Tela de carga: é HTML estático, aparece antes do React. Mostrar o logo aqui
+   (em vez de um spinner genérico) faz a marca ser a primeira coisa na tela. */
+#carregando { text-align: center; padding: 90px 20px; color: var(--muted); }
+#carregando b { display: block; font-size: 1.05rem; color: var(--txt); margin-bottom: 4px; }
+.carga-marca {
+  position: relative; width: 98px; height: 98px; margin: 0 auto 18px;
+  display: grid; place-items: center;
+}
+.carga-marca::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid var(--borda); border-top-color: var(--acc2);
+  animation: girar 1s linear infinite;
+}
+.carga-logo { width: 78px; height: 78px; border-radius: 50%; background: #fff; }
+.spinner {
+  width: 34px; height: 34px; margin: 0 auto 16px; border-radius: 50%;
+  border: 3px solid var(--borda); border-top-color: var(--acc2);
+  animation: girar .8s linear infinite;
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+@keyframes surgir { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.card { animation: surgir .28s ease both; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------------- responsivo ---------------- */
+@media (max-width: 980px) {
+  .conteudo { grid-template-columns: 1fr; }
+  .filtros {
+    position: fixed; inset: 0 0 0 auto; z-index: 60;
+    width: min(320px, 88vw); max-height: none; height: 100%;
+    border-radius: 0; border-left: 1px solid var(--borda-forte);
+    background: var(--bg-alt);
+    transform: translateX(100%); transition: transform .22s ease;
+    padding: 18px 14px 40px;
+  }
+  .filtros.aberto { transform: none; }
+  .abrir-filtros {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 15px; border-radius: 11px; cursor: pointer; font-size: .84rem; font-weight: 700;
+    background: var(--superficie); border: 1px solid var(--borda);
+  }
+  /* Sticky: a gaveta tem 33 categorias: sem isso o botao de fechar sobe junto
+     com a rolagem e o visitante fica preso no painel de filtros. */
+  .fechar-filtros {
+    display: block; position: sticky; top: -18px; z-index: 2;
+    width: calc(100% + 28px); margin: -18px -14px 14px; padding: 16px 14px;
+    cursor: pointer; font-weight: 800; font-size: .85rem;
+    background: var(--acc2); color: var(--tinta); border: none;
+    box-shadow: 0 8px 18px -12px rgba(0,0,0,.9);
+  }
+  .veu {
+    position: fixed; inset: 0; z-index: 55; border: none;
+    background: rgba(4,6,14,.6); backdrop-filter: blur(2px);
+  }
+  .fav { opacity: 1; }
+}
+@media (min-width: 981px) { .fechar-filtros, .veu { display: none; } }
+@media (max-width: 620px) {
+  .grade { grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 10px; }
+  .capa { height: 60px; }
+  .capa-emo { font-size: 1.7rem; }
+  .corpo { padding: 16px 11px 12px; }
+  .titulo { font-size: .8rem; }
+  .preco { font-size: 1.06rem; }
+  /* O nome sai do topo no celular (o logo já identifica a marca) para a busca
+     ficar com largura de verdade — ela é o principal do cabeçalho. */
+  .logo-txt { display: none; }
+  .logo-mark, .logo-emo { width: 36px; height: 36px; }
+  .hero { padding: 30px 0 18px; }
+  /* O selo traz a data por extenso; nos celulares estreitos ele so cabe numa
+     linha (uma pilula com texto quebrado fica torta) reduzindo corpo e recuo. */
+  .selo { font-size: .68rem; padding: 5px 12px; margin-bottom: 12px; }
+  .marca-hero { width: 116px; height: 116px; margin-bottom: 15px; }
+  .avatar-fb { font-size: 2.7rem; }
+  .stat { min-width: 104px; padding: 11px 15px; }
+  .stat b { font-size: 1.25rem; }
+}
+
+/* A política é texto corrido: herda a paleta da vitrine e ajusta a leitura. */
+.doc { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+.doc h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; letter-spacing: -.8px; margin-bottom: 6px; }
+.doc h2 { font-size: 1.05rem; font-weight: 800; margin: 32px 0 10px; color: var(--acc2); }
+.doc p, .doc li { color: var(--txt); opacity: .85; line-height: 1.65; margin-bottom: 12px; }
+.doc ul { padding-left: 22px; margin-bottom: 12px; }
+.doc li { margin-bottom: 8px; }
+.doc a { color: var(--acc2); text-decoration: underline; }
+.doc .atualizado { font-size: .82rem; color: var(--muted); opacity: 1; margin-bottom: 26px; }
+.doc .voltar { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--borda); }
+.doc code { background: var(--superficie-forte); padding: 2px 6px; border-radius: 5px; font-size: .88em; }
+</style>
+</head>
+<body>
+  <div class="doc">
+<h1>Política de Privacidade</h1>
+<p class="atualizado">Atualizada em 02/08/2026</p>
+
+<p>Este site é uma vitrine de ofertas do Mercado Livre e da Amazon. Não tem
+cadastro, não tem login, não tem formulário e não vende nada diretamente: todo
+clique leva para a loja, onde a compra acontece sob as regras dela.</p>
+
+<h2>Não usamos cookies</h2>
+<p>Este site <b>não grava nenhum cookie</b> no seu navegador. Até 2 de agosto de
+2026 havia cookies do Google Analytics; ele foi removido justamente para que não
+houvesse dado de navegação a coletar. Por isso também não existe aviso de
+cookies pedindo consentimento: não há o que consentir.</p>
+
+<h2>O que fica guardado no seu navegador</h2>
+<p>Duas informações ficam no <i>seu</i> aparelho, no armazenamento local do
+navegador. Elas <b>não são enviadas para lugar nenhum</b> e não identificam
+você:</p>
+<ul>
+  <li><b>Tema escolhido</b> (claro ou escuro), para o site abrir do jeito que
+      você deixou.</li>
+  <li><b>Favoritos</b>, se você marcar alguma oferta com o coração.</li>
+</ul>
+<p>Limpar os dados do site pelo seu navegador apaga as duas.</p>
+
+<h2>Serviços de terceiros</h2>
+<p>Para funcionar, a página carrega arquivos de outros serviços. Ao fazer isso,
+o seu <b>endereço IP</b> fica visível para eles — é assim que qualquer site
+funciona, mas você tem o direito de saber quais são:</p>
+<ul>
+  <li><b>unpkg.com</b> — biblioteca React, que monta a vitrine no seu
+      navegador.</li>
+  <li><b>fonts.googleapis.com</b> e <b>fonts.gstatic.com</b> — a fonte do
+      texto.</li>
+  <li><b>abacus.jasoncameron.dev</b> — contador de exibições dos anúncios.
+      Recebe um código embaralhado do produto, sem nada sobre você.</li>
+  <li><b>Cloudflare</b> — entrega o site e mede visitas de forma agregada, sem
+      cookies e sem identificar visitantes.</li>
+</ul>
+<p>Não usamos publicidade, remarketing, pixel de rede social nem qualquer
+rastreamento entre sites.</p>
+
+<h2>Links de afiliado</h2>
+<p>Os links levam ao Mercado Livre e à Amazon com um código de afiliado. Se você
+comprar, este site pode receber comissão — <b>sem custo adicional para
+você</b>. A partir do clique, quem trata os seus dados é a loja, sob a política
+de privacidade dela.</p>
+
+<h2>Preços</h2>
+<p>Os preços são coletados automaticamente e conferidos na loja de tempos em
+tempos, mas podem mudar a qualquer momento. O valor que vale é sempre o da
+página da loja no instante da compra.</p>
+
+<h2>Seus direitos</h2>
+<p>A LGPD (Lei nº 13.709/2018) garante acesso, correção e exclusão dos seus
+dados pessoais. Como este site não mantém cadastro nem banco de dados de
+visitantes, <b>não há dado seu armazenado aqui</b> para acessar ou excluir. Se
+ainda assim quiser falar sobre privacidade, escreva para o contato abaixo e
+respondemos.</p>
+
+<h2>Mudanças</h2>
+<p>Se algum serviço entrar ou sair da página, esta política é atualizada junto,
+com nova data no topo.</p>
+
+<h2>Contato</h2>
+<p>Dúvidas sobre privacidade: <a href="mailto:tmontozo@gmail.com">tmontozo@gmail.com</a></p>
+
+<p class="voltar"><a href="./">← Voltar para as ofertas</a></p>
+
+  </div>
+</body>
+</html>
