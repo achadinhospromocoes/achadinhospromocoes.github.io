@@ -10,51 +10,71 @@
 <link rel="icon" type="image/png" href="logo-96.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Anton&display=swap">
 <style>
 
-/* A paleta sai do logo: verde da marca + ouro das etiquetas de desconto.
-   Antes o site era azul/roxo — bonito, mas de outra marca. --acc (ouro) manda
-   nos preços e no que precisa gritar; --acc2 (verde) é a identidade. */
+/* A paleta sai das artes da marca (dados/marca/): preto de sala escura, laranja
+   incandescente e o âmbar da luminária do detetive. Antes o site era verde+ouro
+   — herança do logo antigo, que não era mais a cara da comunicação.
+
+   Os NOMES dos tokens não mudaram de propósito: --acc2 continua sendo "a cor da
+   identidade" (agora o laranja) e --acc "a cor que grita o preço" (o âmbar).
+   Assim os gradientes que já existiam viram fogo sem uma linha de mudança. */
 :root {
-  --bg: #060b09;
-  --bg-alt: #0b1512;
-  --superficie: rgba(255,255,255,.045);
-  --superficie-forte: rgba(255,255,255,.078);
-  --borda: rgba(255,255,255,.09);
-  --borda-forte: rgba(255,255,255,.17);
-  --txt: #ecf3ee;
-  --muted: #93a89c;
-  --acc: #ffc93c;
-  --acc2: #22c55e;
-  --acc2-escuro: #15803d;
-  --tinta: #06140e;          /* texto por cima dos preenchimentos de destaque */
-  --ok: #34d399;
+  --bg: #050403;             /* preto quente, não azulado */
+  --bg-alt: #0c0907;
+  --superficie: rgba(255,247,240,.045);
+  --superficie-forte: rgba(255,247,240,.085);
+  --borda: rgba(255,240,230,.10);
+  --borda-forte: rgba(255,240,230,.20);
+  --txt: #f2ede7;            /* off-white de papel, nunca #fff cravado */
+  --muted: #9a8d82;
+  --acc: #ffae1a;            /* âmbar da luminária: preço e números */
+  --acc2: #f2650a;           /* laranja da marca: identidade */
+  --acc2-escuro: #b33f02;
+  --tinta: #120a05;          /* texto por cima dos preenchimentos de destaque */
+  /* Único matiz fora do laranja, e de propósito: num card onde preço, badge e
+     desconto já são laranja, "economize" e "frete grátis" em laranja somem. */
+  --ok: #58c97a;
   --ml: #ffe600;
   --amz: #ff9900;
-  --sombra: 0 18px 40px -22px rgba(0,0,0,.85);
-  --sombra-marca: 0 20px 45px -20px rgba(34,197,94,.55);
-  --raio: 18px;
+  --sombra: 0 18px 40px -22px rgba(0,0,0,.9);
+  --sombra-marca: 0 20px 45px -20px rgba(242,101,10,.55);
+  --raio: 10px;              /* as artes são angulosas: 18px arredondava demais */
+  --fonte-display: "Anton", "Arial Narrow", Impact, sans-serif;
+  /* Máscara do papel rasgado (ver .rasgo). Fica no :root para o tema claro
+     herdar a mesma silhueta sem repetir o data-URI.
+     O path começa e termina na MESMA altura (y=9) de propósito: como o desenho
+     se repete no eixo x, qualquer diferença aparecia como um degrau na emenda. */
+  --rasgo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='16'%3E%3Cpath d='M0 9 14 4 27 10 41 5 56 11 70 6 85 12 99 5 114 10 128 4 143 9 157 3 172 8 186 4 201 10 215 5 228 11 240 9 240 16 0 16Z' fill='%23000'/%3E%3C/svg%3E");
 }
 :root[data-tema="claro"] {
-  --bg: #f5f8f5;
-  --bg-alt: #e9f2eb;
-  --superficie: #ffffff;
-  --superficie-forte: #eef5f0;
-  --borda: rgba(6,32,20,.10);
-  --borda-forte: rgba(6,32,20,.20);
-  --txt: #0c1a14;
-  --muted: #5a6f63;
-  /* No claro o ouro some no branco: os mesmos papéis viram âmbar escuro e
-     verde-floresta, que passam no contraste sem trocar a identidade. */
-  --acc: #a35a08;
-  --acc2: #15803d;
-  --acc2-escuro: #14532d;
-  --tinta: #ffffff;
-  --ok: #15803d;
-  --sombra: 0 16px 34px -24px rgba(6,45,28,.45);
-  --sombra-marca: 0 18px 40px -24px rgba(21,128,61,.45);
+  /* Papel kraft, não branco: é o tom dos post-its e do mapa das artes — e o
+     pedido explícito era nada de branco forte. */
+  --bg: #ede4d6;
+  --bg-alt: #e2d7c5;
+  --superficie: #f6f0e4;
+  --superficie-forte: #efe6d6;
+  --borda: rgba(40,26,14,.14);
+  --borda-forte: rgba(40,26,14,.26);
+  --txt: #1c1410;
+  --muted: #6b5b4c;
+  /* Laranja e âmbar puros somem no kraft: os mesmos papéis viram tijolo e
+     âmbar escuro. Os valores foram puxados para baixo até passarem em 4,5:1
+     sobre o #ede4d6 — o laranja da marca (#c24a03) parava em 3,9:1, e ele
+     aparece em texto miúdo (link do rodapé, chip ativo, "economize"). */
+  --acc: #8f5200;
+  --acc2: #a83e02;
+  --acc2-escuro: #7a2f02;
+  --tinta: #fff6ec;
+  --ok: #256b41;
+  --sombra: 0 16px 34px -24px rgba(45,28,10,.45);
+  --sombra-marca: 0 18px 40px -24px rgba(194,74,3,.45);
 }
+/* O halo por trás do nome só existe no escuro: no kraft ele não vira luz,
+   vira borrão em volta das letras. */
+:root[data-tema="claro"] .ht-marca { text-shadow: none; }
+:root[data-tema="claro"] .stat b { text-shadow: none; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -69,24 +89,70 @@ body {
   font-feature-settings: "cv11", "ss01";
 }
 /* Brilhos de fundo: ficam presos na viewport para não esticar a página
-   inteira (que agora tem milhares de cards) num gradiente gigante. */
+   inteira (que agora tem milhares de cards) num gradiente gigante.
+   O da direita é a luminária do detetive — elipse deitada, âmbar, saindo do
+   canto de cima; o da esquerda é o laranja da marca lavando o preto. */
 body::before {
   content: "";
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(70rem 40rem at 10% -10%, rgba(34,197,94,.26), transparent 62%),
-    radial-gradient(55rem 34rem at 92% 2%, rgba(255,201,60,.16), transparent 64%),
+    radial-gradient(70rem 40rem at 8% -12%, rgba(242,101,10,.22), transparent 60%),
+    radial-gradient(62rem 26rem at 94% -4%, rgba(255,174,26,.26), transparent 66%),
+    radial-gradient(26rem 18rem at 88% 6%, rgba(255,206,120,.10), transparent 70%),
     linear-gradient(180deg, var(--bg-alt), var(--bg) 46%);
 }
 :root[data-tema="claro"] body::before {
   background:
-    radial-gradient(70rem 40rem at 10% -10%, rgba(34,197,94,.20), transparent 62%),
-    radial-gradient(55rem 34rem at 92% 2%, rgba(250,204,21,.20), transparent 64%),
+    radial-gradient(70rem 40rem at 8% -12%, rgba(194,74,3,.16), transparent 60%),
+    radial-gradient(62rem 26rem at 94% -4%, rgba(154,91,0,.14), transparent 66%),
     linear-gradient(180deg, var(--bg-alt), var(--bg) 46%);
 }
+/* Textura de grão: uma camada só para a página inteira (fixed), não uma por
+   card — com milhares de cards na grade, filtro por elemento mata a rolagem.
+   O feTurbulence vira um data-URI: nenhum arquivo, nenhuma requisição. */
+/* z-index AUTO de propósito. Com um valor fixo aqui, o conteúdo precisava de um
+   z-index próprio para ficar por cima — e o .wrap virava um stacking context
+   que aprisionava a gaveta de filtros (z-index 60) embaixo do cabeçalho (40).
+   Sendo o último filho posicionado do body, o grão já pinta por cima de tudo
+   que não tem z-index; topo, gaveta e véu, que têm, continuam acima dele. */
+body::after {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none;
+  opacity: .05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+:root[data-tema="claro"] body::after { opacity: .085; mix-blend-mode: multiply; }
 a { color: inherit; text-decoration: none; }
 button, input, select { font-family: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--acc2); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------------- ícones ----------------
+   Todo ícone é <svg> em currentColor (ver ICONES no TSX). Alinhar pela linha de
+   base do texto é o que faz um SVG parecer um caractere e não uma figura solta. */
+.ico { display: inline-block; vertical-align: -.16em; flex: none; }
+.ico-nota { color: var(--acc); }
+.ico-titulo { color: var(--acc2); vertical-align: -.22em; }
+.ico-vazio { color: var(--acc2); opacity: .55; display: block; margin: 0 auto 14px; }
+/* Tipografia da marca: condensada, caixa alta, apertada — é a letra das artes.
+   Fica só nos títulos e números; corpo e título de card seguem em Inter, que
+   aguenta 3 linhas truncadas sem virar borrão. */
+.display {
+  font-family: var(--fonte-display); font-weight: 400;
+  text-transform: uppercase; letter-spacing: .5px;
+}
+/* Faixa pincelada: o retângulo torto que carrega "DA PROCURA" nas artes.
+   É um data-URI, então não custa requisição nem arquivo. */
+/* z-index 0 fecha um stacking context próprio: sem ele, o ::before de tinta
+   (z-index -1) subia até a raiz e ia parar atrás do fundo da página. */
+.pincelada {
+  position: relative; z-index: 0; display: inline-block; padding: 2px 14px;
+  color: var(--tinta);
+}
+.pincelada::before {
+  content: ""; position: absolute; inset: -3px -4px -4px -6px; z-index: -1;
+  background: var(--acc2);
+  clip-path: polygon(1% 12%, 26% 4%, 58% 9%, 87% 2%, 100% 14%, 99% 86%, 72% 96%, 41% 90%, 14% 98%, 0 84%);
+}
 
 .wrap { max-width: 1360px; margin: 0 auto; padding: 0 18px; }
 
@@ -97,7 +163,7 @@ button, input, select { font-family: inherit; color: inherit; }
   background: color-mix(in srgb, var(--bg) 80%, transparent);
   border-bottom: 1px solid var(--borda);
 }
-/* Fio da marca no topo: 2px de verde→ouro que amarram o cabeçalho ao logo. */
+/* Fio da marca no topo: 2px de laranja→âmbar que amarram o cabeçalho ao logo. */
 .topo::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
   background: linear-gradient(90deg, transparent, var(--acc2) 22%, var(--acc) 55%, var(--acc2) 78%, transparent);
@@ -108,11 +174,13 @@ button, input, select { font-family: inherit; color: inherit; }
   padding: 10px 0; max-width: 1360px; margin: 0 auto; padding-inline: 18px;
 }
 .logo { display: flex; align-items: center; gap: 11px; flex: none; }
+/* Sem fundo branco: o logo é o mascote recortado em fundo transparente, e o
+   #fff que existia aqui virava um disco branco atrás dele. */
 .logo-mark {
   width: 40px; height: 40px; border-radius: 50%; flex: none; display: block;
-  object-fit: cover; background: #fff;
+  object-fit: cover; background: transparent;
   border: 1.5px solid color-mix(in srgb, var(--acc2) 55%, transparent);
-  box-shadow: 0 6px 18px -8px rgba(34,197,94,.75);
+  box-shadow: 0 6px 18px -8px rgba(242,101,10,.8);
 }
 .logo-emo {
   width: 40px; height: 40px; border-radius: 50%; flex: none;
@@ -124,11 +192,14 @@ button, input, select { font-family: inherit; color: inherit; }
 /* A assinatura ("ihachei") vem do próprio logo: repetir aqui em caixa alta e
    miúda hierarquiza — marca-mãe em cima, nome do site embaixo. */
 .logo-txt .assinatura {
-  font-size: .58rem; font-weight: 700; letter-spacing: 1.6px;
-  text-transform: uppercase; color: var(--acc2);
+  font-family: var(--fonte-display);
+  font-size: 1.02rem; letter-spacing: .2px; line-height: 1;
+  text-transform: lowercase; color: var(--txt);
 }
+.logo-txt .assinatura em { font-style: normal; color: var(--acc2); }
 .logo-txt .nome {
-  font-size: .96rem; font-weight: 800; letter-spacing: -.3px; white-space: nowrap;
+  font-size: .62rem; font-weight: 700; letter-spacing: 1.1px;
+  text-transform: uppercase; color: var(--muted); white-space: nowrap;
 }
 .topo .busca-wrap { flex: 1; min-width: 0; }
 .icone-btn {
@@ -152,6 +223,9 @@ button, input, select { font-family: inherit; color: inherit; }
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--acc2) 18%, transparent);
 }
 .busca::placeholder { color: var(--muted); }
+/* O "x" nativo do input[type=search] no Chrome aparecia grudado no nosso botão
+   de limpar: dois X, um do navegador e um do site. */
+.busca::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
 .busca-ico, .busca-x {
   position: absolute; top: 50%; transform: translateY(-50%);
   color: var(--muted); font-size: .95rem; pointer-events: none;
@@ -164,11 +238,23 @@ button, input, select { font-family: inherit; color: inherit; }
 .busca-x:hover { color: var(--txt); background: var(--superficie-forte); }
 
 /* ---------------- hero ---------------- */
-.hero { text-align: center; padding: 40px 0 26px; }
+/* A borda rasgada é a assinatura das artes (o corte de papel acima do rodapé).
+   Aqui ela fecha o herói: uma faixa de 14px com máscara de papel picotado, que
+   deixa o fundo passar por dentro dos rasgos. Uma por seção, não por card. */
+.hero { text-align: center; padding: 40px 0 26px; position: relative; }
+.rasgo {
+  height: 16px; width: 100%; flex: none;
+  background: linear-gradient(90deg, var(--acc2-escuro), var(--acc2) 40%, var(--acc) 70%, var(--acc2));
+  -webkit-mask-image: var(--rasgo); mask-image: var(--rasgo);
+  -webkit-mask-size: 240px 16px; mask-size: 240px 16px;
+  -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+}
+.hero-rasgo { margin: 26px 0 4px; opacity: .9; }
 
-/* O logo é redondo, então o herói é redondo: um anel cônico verde→ouro girando
-   devagar em volta da arte. É o único movimento contínuo da página — some
-   inteiro em prefers-reduced-motion, junto com o resto das animações. */
+/* O logo é redondo, então o herói é redondo: um anel cônico laranja→âmbar
+   girando devagar em volta do mascote — o mesmo aro da lupa que ele segura.
+   É o único movimento contínuo da página, e some inteiro em
+   prefers-reduced-motion junto com o resto das animações. */
 .marca-hero { position: relative; width: 148px; height: 148px; margin: 0 auto 18px; }
 .marca-hero::before {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
@@ -176,9 +262,9 @@ button, input, select { font-family: inherit; color: inherit; }
   animation: girar 9s linear infinite;
 }
 .marca-hero::after {
-  content: ""; position: absolute; inset: -18px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(34,197,94,.30), transparent 68%);
-  filter: blur(10px); z-index: -1;
+  content: ""; position: absolute; inset: -22px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(242,101,10,.42), rgba(255,174,26,.16) 45%, transparent 70%);
+  filter: blur(14px); z-index: -1;
 }
 /* width/height explicitos (e nao "inset: 5px" sozinho): num <img> absoluto o
    width:auto vale a largura INTRINSECA do arquivo, entao o 256px do logo
@@ -200,8 +286,9 @@ button, input, select { font-family: inherit; color: inherit; }
    qualquer oferta aparecer. */
 .selo {
   display: inline-flex; align-items: center; gap: 7px; margin-bottom: 14px;
-  padding: 6px 15px; border-radius: 999px;
-  font-size: .74rem; font-weight: 700; letter-spacing: .3px;
+  padding: 7px 16px; border-radius: 999px;
+  font-family: var(--fonte-display); font-size: .82rem; letter-spacing: .8px;
+  text-transform: uppercase;
   color: var(--acc2);
   background: color-mix(in srgb, var(--acc2) 12%, transparent);
   border: 1px solid color-mix(in srgb, var(--acc2) 40%, transparent);
@@ -222,11 +309,27 @@ button, input, select { font-family: inherit; color: inherit; }
   overflow: hidden; white-space: nowrap; border: 0;
   clip: rect(0 0 0 0); clip-path: inset(50%);
 }
-/* Sem o titulo, a bio virou o primeiro texto do herói: cresce um pouco e ganha
-   o tom cheio (era --muted, de legenda) para nao ficar orfa embaixo do logo. */
+/* O título do herói é o bloco de tipo das artes: nome em condensada enorme,
+   com um leve traço de luz por trás, e a linha de baixo carimbada numa faixa
+   de tinta torta. clamp() para caber no celular sem media query. */
+.hero-titulo {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  margin: 2px 0 14px; font-weight: 400;
+}
+.ht-marca {
+  font-family: var(--fonte-display); line-height: .95;
+  font-size: clamp(2.6rem, 8vw, 4.4rem); letter-spacing: 1px;
+  text-transform: lowercase; color: var(--txt);
+  text-shadow: 0 0 46px color-mix(in srgb, var(--acc2) 55%, transparent);
+}
+.ht-faixa {
+  font-family: var(--fonte-display); line-height: 1.12;
+  font-size: clamp(.92rem, 2.4vw, 1.28rem);
+  text-transform: uppercase; letter-spacing: 2.2px;
+}
 .hero .bio {
-  color: var(--txt); opacity: .82; max-width: 560px; margin: 4px auto 0;
-  font-size: 1.06rem; font-weight: 500; line-height: 1.5;
+  color: var(--txt); opacity: .78; max-width: 560px; margin: 0 auto;
+  font-size: 1.02rem; font-weight: 500; line-height: 1.5;
 }
 
 .stats {
@@ -245,8 +348,10 @@ button, input, select { font-family: inherit; color: inherit; }
 }
 .stat:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--acc2) 45%, transparent); }
 .stat b {
-  display: block; font-size: 1.42rem; font-weight: 900; letter-spacing: -.6px;
+  display: block; font-family: var(--fonte-display);
+  font-size: 1.72rem; letter-spacing: .5px; line-height: 1.1;
   font-variant-numeric: tabular-nums; color: var(--acc);
+  text-shadow: 0 0 22px color-mix(in srgb, var(--acc) 45%, transparent);
 }
 .stat span { font-size: .68rem; text-transform: uppercase; letter-spacing: .9px; color: var(--muted); font-weight: 600; }
 
@@ -330,11 +435,13 @@ button, input, select { font-family: inherit; color: inherit; }
 }
 .barra h2 {
   display: flex; align-items: center; gap: 9px;
-  font-size: 1.06rem; font-weight: 800; letter-spacing: -.3px;
+  font-family: var(--fonte-display); font-size: 1.34rem;
+  text-transform: uppercase; letter-spacing: .8px;
 }
-/* Barrinha vertical antes do título da vitrine — o mesmo verde do logo. */
+/* Barrinha vertical antes do título da vitrine — laranja → âmbar, o mesmo
+   degradê do fogo das artes. Canto vivo, não arredondado. */
 .barra h2::before {
-  content: ""; width: 4px; height: 1.05em; border-radius: 3px; flex: none;
+  content: ""; width: 5px; height: 1.05em; flex: none;
   background: linear-gradient(180deg, var(--acc2), var(--acc));
 }
 .barra .contador { color: var(--muted); font-size: .82rem; font-weight: 500; margin-left: 13px; }
@@ -390,16 +497,23 @@ button, input, select { font-family: inherit; color: inherit; }
      esta sempre visivel, nao so no hover). */
   display: flex; align-items: center; padding: 0 12px 0 46px;
 }
-.capa-emo { font-size: 2.1rem; opacity: .5; filter: saturate(1.2); }
-.card:hover .capa-emo { opacity: .78; }
+.capa-ico { display: flex; color: var(--acc2); opacity: .55; transition: opacity .16s; }
+.card:hover .capa-ico { opacity: .95; }
+/* Etiqueta de desconto, não pílula: o canto cortado copia as tags de % das
+   artes e é a única forma angulosa que cabe dentro do card sem custar filtro. */
 .badge {
-  position: absolute; top: 10px; right: 10px;
-  background: linear-gradient(135deg, #15803d, #22c55e); color: #fff;
-  font-weight: 800; font-size: .78rem; padding: 4px 10px; border-radius: 999px;
+  position: absolute; top: 9px; right: 0;
+  background: linear-gradient(135deg, #c24a03, #f2650a); color: #fff;
+  font-family: var(--fonte-display); letter-spacing: .5px;
+  font-size: .84rem; line-height: 1.15; padding: 5px 11px 5px 13px;
+  clip-path: polygon(9px 0, 100% 0, 100% 100%, 0 100%);
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 6px 16px -8px #22c55e;
+  box-shadow: 0 6px 16px -8px rgba(242,101,10,.9);
 }
-.badge.quente { background: linear-gradient(135deg, #dc2626, #f97316); box-shadow: 0 6px 16px -8px #f97316; }
+.badge.quente {
+  background: linear-gradient(135deg, #f2650a, #ffae1a); color: #170c02;
+  box-shadow: 0 6px 18px -7px rgba(255,174,26,.95);
+}
 /* Etiqueta da loja: as cores são as OFICIAIS (amarelo ML, laranja Amazon) e não
    mudam com o tema — por isso a tinta é fixa e escura, e não var(--tinta), que
    fica branca no claro e sumiria em cima do amarelo. */
@@ -418,8 +532,8 @@ button, input, select { font-family: inherit; color: inherit; }
 }
 .precos { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
 .preco {
-  font-size: 1.2rem; font-weight: 900; letter-spacing: -.6px; color: var(--acc);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--fonte-display); font-size: 1.32rem; letter-spacing: .3px;
+  color: var(--acc); font-variant-numeric: tabular-nums; line-height: 1.15;
 }
 .antigo { font-size: .78rem; color: var(--muted); text-decoration: line-through; }
 .economia { font-size: .73rem; font-weight: 700; color: var(--ok); }
@@ -429,23 +543,49 @@ button, input, select { font-family: inherit; color: inherit; }
 .fav {
   position: absolute; top: 8px; left: 8px; z-index: 3;
   width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
-  border: none; background: rgba(8,11,22,.45); backdrop-filter: blur(4px);
+  /* Segue o fundo do tema: cravado em preto, o botão virava uma bolota escura
+     por cima do card de papel kraft no tema claro. */
+  border: 1px solid var(--borda);
+  background: color-mix(in srgb, var(--bg) 65%, transparent); backdrop-filter: blur(4px);
   font-size: .85rem; line-height: 1; display: grid; place-items: center;
   opacity: 0; transition: opacity .15s, transform .15s;
 }
 .card:hover .fav, .fav.on { opacity: 1; }
 .fav:hover { transform: scale(1.14); }
+/* Salvo = coração preenchido no laranja da marca. Com o emoji isso vinha de
+   graça (❤️ vs 🤍); com SVG é o fill que faz o estado. */
+.fav .ico { color: var(--txt); }
+.fav.on .ico { color: var(--acc2); fill: var(--acc2); }
+
+/* Alinhamento dos ícones dentro dos controles que já eram flex ou texto.
+   .abrir-filtros e .fechar-filtros ficam DE FORA: os dois dependem de
+   display:none no desktop, e listá-los aqui os ressuscitava. */
+.chip .emo, .switch, .rede, .fim,
+.meta span, .views, .marca-tag { display: inline-flex; align-items: center; }
+.chip .emo { margin-right: 7px; color: var(--muted); }
+.chip.ativo .emo { color: var(--acc2); }
+.meta span, .views { gap: 5px; }
+.switch, .rede, .fim, .marca-tag { gap: 7px; }
+.marca-tag button { display: inline-flex; align-items: center; }
 
 /* ---------------- estados / rodapé ---------------- */
 .vazio { text-align: center; color: var(--muted); padding: 60px 20px; }
-.vazio b { display: block; font-size: 1.05rem; color: var(--txt); margin-bottom: 6px; }
-.mais { display: grid; place-items: center; padding: 30px 0 10px; }
-.mais button {
-  padding: 13px 32px; border-radius: 999px; cursor: pointer; font-weight: 800; font-size: .9rem;
-  background: linear-gradient(135deg, var(--acc2), var(--acc)); color: var(--tinta); border: none;
-  box-shadow: 0 14px 30px -14px var(--acc2); transition: transform .15s, box-shadow .15s;
+.vazio b {
+  display: block; font-family: var(--fonte-display); font-size: 1.25rem;
+  text-transform: uppercase; letter-spacing: .8px; color: var(--txt); margin-bottom: 6px;
 }
-.mais button:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -14px var(--acc2); }
+.mais { display: grid; place-items: center; padding: 30px 0 10px; }
+/* O CTA é o "MODO FULL" das artes: pílula laranja cheia, letra condensada em
+   caixa alta, com brilho embaixo. É o único botão do site que grita. */
+.mais button {
+  padding: 15px 38px; border-radius: 999px; cursor: pointer;
+  font-family: var(--fonte-display); font-size: 1.02rem;
+  text-transform: uppercase; letter-spacing: 1.1px;
+  background: linear-gradient(135deg, var(--acc2), var(--acc)); color: var(--tinta); border: none;
+  box-shadow: 0 14px 34px -12px var(--acc2), inset 0 1px 0 rgba(255,255,255,.35);
+  transition: transform .15s, box-shadow .15s;
+}
+.mais button:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -12px var(--acc2), inset 0 1px 0 rgba(255,255,255,.45); }
 .fim { text-align: center; color: var(--muted); font-size: .8rem; padding: 26px 0; }
 
 .topo-btn {
@@ -458,12 +598,16 @@ button, input, select { font-family: inherit; color: inherit; }
 .topo-btn:hover { transform: translateY(-3px); }
 
 footer {
-  border-top: 1px solid var(--borda); padding: 30px 0 38px;
+  position: relative; padding: 0 0 38px; margin-top: 10px;
   text-align: center; color: var(--muted); font-size: .78rem; line-height: 1.7;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--acc2) 7%, transparent), transparent 160px);
 }
+/* O rasgo vira a borda de cima do rodapé (por isso o border-top saiu): é o
+   mesmo corte de papel que separa a arte da faixa branca nos banners. */
+.rodape-rasgo { transform: scaleY(-1); margin-bottom: 26px; opacity: .85; }
 .rodape-logo {
   width: 48px; height: 48px; border-radius: 50%; display: block; margin: 0 auto 14px;
-  opacity: .75; border: 1px solid var(--borda-forte); background: #fff;
+  opacity: .75; border: 1px solid var(--borda-forte); background: transparent;
   transition: opacity .18s;
 }
 .rodape-logo:hover { opacity: 1; }
@@ -475,7 +619,10 @@ footer {
 /* Tela de carga: é HTML estático, aparece antes do React. Mostrar o logo aqui
    (em vez de um spinner genérico) faz a marca ser a primeira coisa na tela. */
 #carregando { text-align: center; padding: 90px 20px; color: var(--muted); }
-#carregando b { display: block; font-size: 1.05rem; color: var(--txt); margin-bottom: 4px; }
+#carregando b {
+  display: block; font-family: var(--fonte-display); font-size: 1.3rem;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--txt); margin-bottom: 4px;
+}
 .carga-marca {
   position: relative; width: 98px; height: 98px; margin: 0 auto 18px;
   display: grid; place-items: center;
@@ -485,7 +632,7 @@ footer {
   border: 2px solid var(--borda); border-top-color: var(--acc2);
   animation: girar 1s linear infinite;
 }
-.carga-logo { width: 78px; height: 78px; border-radius: 50%; background: #fff; }
+.carga-logo { width: 78px; height: 78px; border-radius: 50%; background: transparent; }
 .spinner {
   width: 34px; height: 34px; margin: 0 auto 16px; border-radius: 50%;
   border: 3px solid var(--borda); border-top-color: var(--acc2);
@@ -513,21 +660,25 @@ footer {
   .filtros.aberto { transform: none; }
   .abrir-filtros {
     display: inline-flex; align-items: center; gap: 7px;
-    padding: 9px 15px; border-radius: 11px; cursor: pointer; font-size: .84rem; font-weight: 700;
-    background: var(--superficie); border: 1px solid var(--borda);
+    padding: 9px 15px; border-radius: 11px; cursor: pointer;
+    font-family: var(--fonte-display); font-size: .92rem;
+    text-transform: uppercase; letter-spacing: .6px;
+    background: var(--superficie); border: 1px solid var(--borda-forte);
   }
   /* Sticky: a gaveta tem 33 categorias: sem isso o botao de fechar sobe junto
      com a rolagem e o visitante fica preso no painel de filtros. */
   .fechar-filtros {
-    display: block; position: sticky; top: -18px; z-index: 2;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    position: sticky; top: -18px; z-index: 2;
     width: calc(100% + 28px); margin: -18px -14px 14px; padding: 16px 14px;
-    cursor: pointer; font-weight: 800; font-size: .85rem;
+    cursor: pointer; font-family: var(--fonte-display); font-size: .98rem;
+    text-transform: uppercase; letter-spacing: .8px;
     background: var(--acc2); color: var(--tinta); border: none;
     box-shadow: 0 8px 18px -12px rgba(0,0,0,.9);
   }
   .veu {
     position: fixed; inset: 0; z-index: 55; border: none;
-    background: rgba(4,6,14,.6); backdrop-filter: blur(2px);
+    background: rgba(5,4,3,.72); backdrop-filter: blur(2px);
   }
   .fav { opacity: 1; }
 }
@@ -535,7 +686,7 @@ footer {
 @media (max-width: 620px) {
   .grade { grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 10px; }
   .capa { height: 60px; }
-  .capa-emo { font-size: 1.7rem; }
+  .capa-ico .ico { width: 24px; height: 24px; }
   .corpo { padding: 16px 11px 12px; }
   .titulo { font-size: .8rem; }
   .preco { font-size: 1.06rem; }
