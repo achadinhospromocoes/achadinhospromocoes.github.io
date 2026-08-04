@@ -1,0 +1,6 @@
+# Este repo e 100% derivado: o publicador roda `git add -A` a cada hora, entao
+# QUALQUER arquivo solto largado aqui vira conteudo do site publico. Ja
+# aconteceu com um backup de logo de meio mega.
+logo-anterior-*.png
+*.bak
+*.tmp

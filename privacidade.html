@@ -313,8 +313,8 @@ button, input, select { font-family: inherit; color: inherit; }
    com um leve traço de luz por trás, e a linha de baixo carimbada numa faixa
    de tinta torta. clamp() para caber no celular sem media query. */
 .hero-titulo {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  margin: 2px 0 14px; font-weight: 400;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  margin: 2px 0 18px; font-weight: 400;
 }
 .ht-marca {
   font-family: var(--fonte-display); line-height: .95;
@@ -322,14 +322,13 @@ button, input, select { font-family: inherit; color: inherit; }
   text-transform: lowercase; color: var(--txt);
   text-shadow: 0 0 46px color-mix(in srgb, var(--acc2) 55%, transparent);
 }
+/* Com uma palavra só na faixa (era o nome inteiro), sobra largura: ela cresce
+   para virar o segundo bloco de tipo do herói, como "DA PROCURA" nas artes. */
 .ht-faixa {
-  font-family: var(--fonte-display); line-height: 1.12;
-  font-size: clamp(.92rem, 2.4vw, 1.28rem);
-  text-transform: uppercase; letter-spacing: 2.2px;
-}
-.hero .bio {
-  color: var(--txt); opacity: .78; max-width: 560px; margin: 0 auto;
-  font-size: 1.02rem; font-weight: 500; line-height: 1.5;
+  font-family: var(--fonte-display); line-height: 1.1;
+  font-size: clamp(1.4rem, 4vw, 2.15rem);
+  text-transform: uppercase; letter-spacing: 3px;
+  padding: 3px 20px 4px;
 }
 
 .stats {
