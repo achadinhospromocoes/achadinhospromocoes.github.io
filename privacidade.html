@@ -396,7 +396,9 @@ button, input, select { font-family: inherit; color: inherit; }
 .dq-trilho::-webkit-scrollbar { display: none; }
 
 .dq {
-  position: relative; flex: 0 0 clamp(210px, 46vw, 250px);
+  /* Um pouco maior que o card da grade (216px), não o dobro: o carrossel é
+     aperitivo, e slide largo demais só mostra três produtos de cada vez. */
+  position: relative; flex: 0 0 clamp(178px, 38vw, 202px);
   scroll-snap-align: start;
   display: flex; flex-direction: column;
   background: var(--superficie); border: 1px solid var(--borda);
@@ -408,44 +410,44 @@ button, input, select { font-family: inherit; color: inherit; }
   border-color: color-mix(in srgb, var(--acc2) 55%, transparent);
   box-shadow: var(--sombra), 0 0 0 1px color-mix(in srgb, var(--acc2) 22%, transparent);
 }
-/* Capa mais alta que a da grade (74px): aqui o card é o herói, não item de
-   lista, e o vazio dá espaço para o selo TOP respirar ao lado do -%. */
+/* Capa um pouco mais alta que a da grade (74px): o selo TOP e a etiqueta de %
+   dividem a faixa de cima, e o ícone precisa de um respiro abaixo deles. */
 .dq-capa {
-  position: relative; height: 96px; flex: none;
+  position: relative; height: 80px; flex: none;
   background:
     radial-gradient(120% 100% at 15% 0%, hsl(var(--h) 62% 55% / .26), transparent 72%),
     linear-gradient(135deg, hsl(var(--h) 48% 45% / .18), transparent 85%);
   border-bottom: 1px solid var(--borda);
   /* O recuo no topo empurra o ícone para baixo da linha do selo TOP (à
      esquerda) e da etiqueta de % (à direita): sem ele os três se cruzam. */
-  display: flex; align-items: center; justify-content: center; padding: 22px 14px 0;
+  display: flex; align-items: center; justify-content: center; padding: 20px 12px 0;
 }
 .dq-capa-ico { display: flex; color: var(--acc2); opacity: .7; transition: opacity .16s; }
 .dq:hover .dq-capa-ico { opacity: 1; }
 /* Posição na curadoria. Fica no canto oposto ao -% (que é .badge, à direita). */
 .dq-selo {
-  position: absolute; left: 12px; top: 10px;
-  font-family: var(--fonte-display); font-size: .68rem; letter-spacing: 1.2px;
-  padding: 3px 9px; border-radius: 999px; text-transform: uppercase;
+  position: absolute; left: 10px; top: 9px;
+  font-family: var(--fonte-display); font-size: .62rem; letter-spacing: 1.1px;
+  padding: 2px 8px; border-radius: 999px; text-transform: uppercase;
   color: var(--acc); background: color-mix(in srgb, var(--acc) 14%, transparent);
   border: 1px solid color-mix(in srgb, var(--acc) 42%, transparent);
 }
-.dq-corpo { display: flex; flex-direction: column; gap: 7px; padding: 18px 14px 14px; flex: 1; }
+.dq-corpo { display: flex; flex-direction: column; gap: 6px; padding: 16px 12px 12px; flex: 1; }
 .dq-nome {
-  font-size: .885rem; line-height: 1.34; font-weight: 600; margin: 0;
+  font-size: .83rem; line-height: 1.32; font-weight: 600; margin: 0;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.dq-meta { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; font-size: .73rem; color: var(--muted); }
+.dq-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: .7rem; color: var(--muted); }
 .dq-meta .frete { color: var(--ok); font-weight: 700; }
-.dq-precos { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+.dq-precos { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; margin-top: auto; padding-top: 5px; }
 /* Um degrau acima do preço da grade (1.32rem): é o número que puxa o clique. */
 .dq-preco {
-  font-family: var(--fonte-display); font-size: 1.54rem; letter-spacing: .3px;
+  font-family: var(--fonte-display); font-size: 1.36rem; letter-spacing: .3px;
   color: var(--acc); font-variant-numeric: tabular-nums; line-height: 1.1;
   text-shadow: 0 0 24px color-mix(in srgb, var(--acc) 40%, transparent);
 }
-.dq-antigo { font-size: .78rem; color: var(--muted); text-decoration: line-through; }
-.dq-economia { font-size: .75rem; font-weight: 700; color: var(--ok); }
+.dq-antigo { font-size: .74rem; color: var(--muted); text-decoration: line-through; }
+.dq-economia { font-size: .71rem; font-weight: 700; color: var(--ok); }
 
 .redes { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 20px; }
 .rede {
@@ -799,12 +801,12 @@ footer {
   .dq-setas { display: none; }
   .destaques { margin-top: 22px; }
   .dq-titulo-secao { font-size: 1rem; letter-spacing: 1.2px; }
-  .dq { flex-basis: clamp(170px, 62vw, 210px); }
-  .dq-capa { height: 78px; }
-  .dq-capa-ico .ico { width: 30px; height: 30px; }
-  .dq-corpo { padding: 16px 12px 12px; }
-  .dq-nome { font-size: .82rem; }
-  .dq-preco { font-size: 1.28rem; }
+  .dq { flex-basis: clamp(152px, 46vw, 178px); }
+  .dq-capa { height: 68px; padding-top: 18px; }
+  .dq-capa-ico .ico { width: 26px; height: 26px; }
+  .dq-corpo { padding: 14px 10px 11px; }
+  .dq-nome { font-size: .78rem; }
+  .dq-preco { font-size: 1.14rem; }
 }
 
 /* A política é texto corrido: herda a paleta da vitrine e ajusta a leitura. */
