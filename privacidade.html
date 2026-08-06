@@ -282,26 +282,6 @@ button, input, select { font-family: inherit; color: inherit; }
 .avatar-fb { display: grid; place-items: center; font-size: 3.4rem;
   background: linear-gradient(135deg, var(--acc2), var(--acc)); }
 
-/* Selo de credibilidade logo acima do nome: diz o que o site faz antes de
-   qualquer oferta aparecer. */
-.selo {
-  display: inline-flex; align-items: center; gap: 7px; margin-bottom: 14px;
-  padding: 7px 16px; border-radius: 999px;
-  font-family: var(--fonte-display); font-size: .82rem; letter-spacing: .8px;
-  text-transform: uppercase;
-  color: var(--acc2);
-  background: color-mix(in srgb, var(--acc2) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--acc2) 40%, transparent);
-}
-.selo .pulso {
-  width: 7px; height: 7px; border-radius: 50%; background: var(--acc2);
-  box-shadow: 0 0 0 0 color-mix(in srgb, var(--acc2) 70%, transparent);
-  animation: pulsar 2.4s ease-out infinite;
-}
-@keyframes pulsar {
-  70% { box-shadow: 0 0 0 9px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
 /* Fora da tela, mas ainda lido por buscador e leitor de tela. clip-path sozinho
    nao basta em navegador antigo, dai o par com o clip depreciado. */
 .so-leitor {
@@ -789,9 +769,6 @@ footer {
   .logo-txt { display: none; }
   .logo-mark, .logo-emo { width: 36px; height: 36px; }
   .hero { padding: 30px 0 18px; }
-  /* O selo traz a data por extenso; nos celulares estreitos ele so cabe numa
-     linha (uma pilula com texto quebrado fica torta) reduzindo corpo e recuo. */
-  .selo { font-size: .68rem; padding: 5px 12px; margin-bottom: 12px; }
   .marca-hero { width: 116px; height: 116px; margin-bottom: 15px; }
   .avatar-fb { font-size: 2.7rem; }
   .stat { min-width: 104px; padding: 11px 15px; }
